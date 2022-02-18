@@ -18,7 +18,7 @@ const Carousel = () => {
       <motion.div ref={carousel} className={styles.carousel}>
         <motion.div
           drag='x'
-          dragConstraints={{ right: 6158, left: -6158 }}
+          dragConstraints={{ right: 5150, left: -5150 }}
           className={styles.innerCarousel}
         >
 
@@ -27,7 +27,7 @@ const Carousel = () => {
             return (
               <motion.div className={styles.item} key={i}>
                 <Image
-                  layout='responsive'
+                  width={700}
                   src={image}
                   alt=''
                 />
