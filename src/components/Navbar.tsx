@@ -48,6 +48,13 @@ export default function Navbar() {
                 <a className={styles.link}>About</a>
               </Link>
             </li>
+            
+            {/* Link 5 */}
+            <li className={styles.notactive}>
+              <Link href='/carousel'>
+                <a className={styles.link}>Carousel</a>
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

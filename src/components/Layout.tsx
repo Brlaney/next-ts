@@ -1,6 +1,7 @@
 ﻿import Head from 'next/head';
 import Navbar from './Navbar';
 import seo from '@/lib/data/seo';
+import { motion } from 'framer-motion';
 import styles from '@/styles/components/Layout.module.scss';
 
 
@@ -16,11 +17,11 @@ const Layout = ({ children }) => {
         <title>{seo.title}</title>
       </Head>
       <Navbar />
-      <div className={styles.container}>
-        <main className={styles.main}>
+      <motion.div className={styles.container}>
+        <motion.main className={styles.main}>
           {children}
-        </main>
-      </div>
+        </motion.main>
+      </motion.div>
     </>
   )
 };
