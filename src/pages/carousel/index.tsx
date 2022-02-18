@@ -7,10 +7,15 @@ import styles from '@/styles/pages/Carousel.module.scss';
 
 const Carousel = () => {
   const [width, setWidth] = useState(0);
-  const carousel = useRef();
+  const [offsetWidth, setOffsetWidth] = useState(1872);
+  const carousel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    // Test the ref/output in browsers console
+    // console.log('\nScroll width: ' + carousel.current.scrollWidth);
+    // console.log('\nOffset width: ' + carousel.current.offsetWidth);
+    
+    setWidth(carousel.current.scrollWidth - offsetWidth);
   }, []);
 
   return (
@@ -18,7 +23,7 @@ const Carousel = () => {
       <motion.div ref={carousel} className={styles.carousel}>
         <motion.div
           drag='x'
-          dragConstraints={{ right: 5150, left: -5150 }}
+          dragConstraints={{ right: 0, left: -width }}
           className={styles.innerCarousel}
         >
 
@@ -28,6 +33,7 @@ const Carousel = () => {
               <motion.div className={styles.item} key={i}>
                 <Image
                   width={700}
+                  height={466.66}
                   src={image}
                   alt=''
                 />

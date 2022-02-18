@@ -2,15 +2,13 @@
 @import '../mixins/width.scss';
 // @import '../mixins/height.scss';
 
-// 14192
-
 .container {
   height: 810px;
   width: 100vw;
   color: $bg-d;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   .carousel {
     margin: 1rem 0;
@@ -24,7 +22,6 @@
         margin: 3.2rem 0.5rem;
       }
       .item Img {
-        // border-radius: 0.2rem;
         pointer-events: none;
       }
     }
