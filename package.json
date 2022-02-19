@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "flubber": "^0.4.2",
     "framer-motion": "^6.0.0",
     "next": "12.1.0",
     "react": "17.0.2",

@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import images from '@/components/Images';
-import Image from 'next/image'
+import Image from 'next/image';
 import styles from '@/styles/pages/Carousel.module.scss';
 
 
