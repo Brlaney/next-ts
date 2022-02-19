@@ -2,12 +2,9 @@ import Link from 'next/link';
 import styles from '@/styles/components/Navbar.module.scss';
 
 const links = [
-  { id: 1, name: 'Products', link: '/products' },
-  { id: 2, name: 'Sign-up', link: '/sign-up' },
-  { id: 3, name: 'Contact', link: '/contact' },
-  { id: 4, name: 'About', link: '/about' },
-  { id: 5, name: 'Carousel', link: '/carousel' },
-  { id: 6, name: 'Bars', link: '/bars' }
+  { id: 1, name: 'Basic Pages', link: '/basics' },
+  { id: 2, name: 'Carousel', link: '/carousel' },
+  { id: 3, name: 'Bars', link: '/bars' }
 ];
 
 export default function Navbar() {

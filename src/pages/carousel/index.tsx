@@ -3,13 +3,23 @@ import { motion } from 'framer-motion';
 import images from '@/components/Images';
 import Image from 'next/image';
 import styles from '@/styles/pages/Carousel.module.scss';
+import useWindowSize from '@/lib/utils/viewport';
 
 
 const Carousel = () => {
-  const [width, setWidth] = useState(0);
-  const [offsetWidth, setOffsetWidth] = useState(1920);
-  const carousel = useRef<HTMLDivElement>(null);
+  // Display screen width/height: {size.width}{size.height}
+  const size = useWindowSize();
+  console.log(size.width)
 
+
+  const [width, setWidth] = useState(0);
+  const [offsetWidth, setOffsetWidth] = useState(1872);    // Edge
+  // const [offsetWidth, setOffsetWidth] = useState(1920); // Chrome/Firefox
+  
+  // Unsure of why this doesn't function correctly
+  // const [offsetWidth, setOffsetWidth] = useState(size.width);
+  const carousel = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     // Test the ref/output in browsers console
     // console.log('\nScroll width: ' + carousel.current.scrollWidth);
