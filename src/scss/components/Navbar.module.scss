@@ -29,42 +29,15 @@
     #rightside {
       font-family: $secondary-font;
       #list {
-        .active {
-          font-size: 1rem;
-          font-weight: 500;
-          color: $light;
+        .liDropdown {
+          font-family: $secondary-font;
         }
-        .notactive {
-          font-size: 1rem;
-          font-weight: 500;
-          color: '#C2C2C2' !important;
-        }
-        .active:hover {
-          color: $text-light;
-          text-decoration: underline;
-          text-decoration-color: $secondary;
-        }
-        .notactive:hover {
-          color: '#C2C2C2' !important;
-          text-decoration: underline;
-          text-decoration-color: $secondary;
+        .liItem {
+          link .link {
+            color: $text-light;
+          }
         }
       }
     }
   }
-}
-
-#listItem1, #listItem2, #listItem3, #listItem4 {
-  font-family: $primary-font;
-  margin: 0 1rem 0 0;
-  padding: 0;
-}
-
-.link1, .link2, .link3, .link4 {
-  color: $bg-d;
-  font-family: $primary-font !important;
-}
-
-#listHeader {
-  color: $bg-d;
 }

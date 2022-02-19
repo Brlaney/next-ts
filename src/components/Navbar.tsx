@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import styles from '@/styles/components/Navbar.module.scss';
 
+const endpoints = [
+  { id: 1, name: 'Products', link: '/products' },
+  { id: 2, name: 'Sign-up', link: '/sign-up' },
+  { id: 3, name: 'Contact', link: '/contact' },
+  { id: 4, name: 'About', link: '/about' }
+];
 
 export default function Navbar() {
   return (
@@ -13,7 +19,7 @@ export default function Navbar() {
       <nav id={styles.navcontainer} className='uk-navbar-container'>
         <div id={styles.parent} className='uk-navbar-left uk-margin-left'>
           <a id={styles.brand} href='/' className='uk-navbar-item uk-logo'>
-            Next.tsx
+            Next-ts
           </a>
         </div>
 
@@ -21,36 +27,24 @@ export default function Navbar() {
         <div id={styles.rightside} className='uk-navbar-right uk-margin-right'>
           <ul id={styles.list} className='uk-navbar-nav'>
 
-            {/* Link 1 */}
-            <li className={styles.active}>
-              <Link href='/products'>
-                <a className={styles.link}>Products</a>
-              </Link>
+            {/* Dropdown list */}
+            <li className={styles.liDropdown}>
+              <a href='#'>Standard pages</a>
+              <div className='uk-navbar-dropdown'>
+                <ul className='uk-nav uk-navbar-dropdown-nav'>
+                  {endpoints.map(endpoint => {
+                    <li key={endpoint.id}>
+                      <a href={endpoint.link}>
+                        {endpoint.name}
+                      </a>
+                    </li>
+                  })}
+                </ul>
+              </div>
             </li>
 
-            {/* Link 2 */}
-            <li className={styles.notactive}>
-              <Link href='/sign-up'>
-                <a className={styles.link}>Sign-up</a>
-              </Link>
-            </li>
-
-            {/* Link 3 */}
-            <li className={styles.notactive}>
-              <Link href='/contact'>
-                <a className={styles.link}>Contact</a>
-              </Link>
-            </li>
-
-            {/* Link 4 */}
-            <li className={styles.notactive}>
-              <Link href='/about'>
-                <a className={styles.link}>About</a>
-              </Link>
-            </li>
-            
-            {/* Link 5 */}
-            <li className={styles.notactive}>
+            {/* Carousel link */}
+            <li className={styles.liItem}>
               <Link href='/carousel'>
                 <a className={styles.link}>Carousel</a>
               </Link>
