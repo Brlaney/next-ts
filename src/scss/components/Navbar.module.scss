@@ -1,5 +1,6 @@
 @import '../theme/theme';
 
+
 #navbar {
   font-family: $primary-font !important;
   #navcontainer {
@@ -17,22 +18,12 @@
         text-decoration: underline;
         text-decoration-color: $secondary;
       }
-      ul {
-        color: $bg-d;
-        li {
-          #brand {
-            margin-left: 1rem;
-          }
-        }
-      }
     }
     #rightside {
       font-family: $secondary-font;
       #list {
-        .liDropdown {
+        .item {
           font-family: $secondary-font;
-        }
-        .liItem {
           link .link {
             color: $text-light;
           }

@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import styles from '@/styles/components/Navbar.module.scss';
 
-const endpoints = [
+const links = [
   { id: 1, name: 'Products', link: '/products' },
   { id: 2, name: 'Sign-up', link: '/sign-up' },
   { id: 3, name: 'Contact', link: '/contact' },
-  { id: 4, name: 'About', link: '/about' }
+  { id: 4, name: 'About', link: '/about' },
+  { id: 5, name: 'Carousel', link: '/carousel' },
+  { id: 6, name: 'Bars', link: '/bars' }
 ];
 
 export default function Navbar() {
@@ -27,28 +29,14 @@ export default function Navbar() {
         <div id={styles.rightside} className='uk-navbar-right uk-margin-right'>
           <ul id={styles.list} className='uk-navbar-nav'>
 
-            {/* Dropdown list */}
-            <li className={styles.liDropdown}>
-              <a href='#'>Standard pages</a>
-              <div className='uk-navbar-dropdown'>
-                <ul className='uk-nav uk-navbar-dropdown-nav'>
-                  {endpoints.map(endpoint => {
-                    <li key={endpoint.id}>
-                      <a href={endpoint.link}>
-                        {endpoint.name}
-                      </a>
-                    </li>
-                  })}
-                </ul>
-              </div>
-            </li>
-
-            {/* Carousel link */}
-            <li className={styles.liItem}>
-              <Link href='/carousel'>
-                <a className={styles.link}>Carousel</a>
-              </Link>
-            </li>
+            {/* Iterate over the links array */}
+            {links.map(link => (
+              <li key={link.id} className={styles.item}>
+                <Link href={link.link}>
+                  <a className={styles.link}>{link.name}</a>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
