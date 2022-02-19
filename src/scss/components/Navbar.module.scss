@@ -2,7 +2,7 @@
 
 
 #navbar {
-  font-family: $primary-font !important;
+  font-family: $primary-font;
   #navcontainer {
     position: sticky;
     background-color: $bg-d;
@@ -23,9 +23,17 @@
       font-family: $secondary-font;
       #list {
         .item {
+          margin: 0;
+          padding: 0;
           font-family: $secondary-font;
-          link .link {
+          .link {
+            font-size: 1rem;
             color: $text-light;
+            padding: 0 0.6rem;
+          }
+          .link:hover {
+            text-decoration: underline;
+            text-decoration-color: $secondary;
           }
         }
       }

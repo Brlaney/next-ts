@@ -7,14 +7,13 @@ import styles from '@/styles/pages/Carousel.module.scss';
 
 const Carousel = () => {
   const [width, setWidth] = useState(0);
-  const [offsetWidth, setOffsetWidth] = useState(1872);
+  const [offsetWidth, setOffsetWidth] = useState(1920);
   const carousel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Test the ref/output in browsers console
     // console.log('\nScroll width: ' + carousel.current.scrollWidth);
     // console.log('\nOffset width: ' + carousel.current.offsetWidth);
-    
     setWidth(carousel.current.scrollWidth - offsetWidth);
   }, []);
 
