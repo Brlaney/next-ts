@@ -4,7 +4,8 @@ import styles from '@/styles/components/Navbar.module.scss';
 const links = [
   { id: 1, name: 'Basic Pages', link: '/basics' },
   { id: 2, name: 'Carousel', link: '/carousel' },
-  { id: 3, name: 'Bars', link: '/bars' }
+  { id: 3, name: 'Bars', link: '/bars' },
+  { id: 4, name: 'Charts', link: '/charts' }
 ];
 
 export default function Navbar() {
