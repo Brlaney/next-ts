@@ -12,8 +12,8 @@ const Carousel = () => {
   console.log(size.width)
 
   const [width, setWidth] = useState(0);
-  const [offsetWidth, setOffsetWidth] = useState(1872);    // Edge
-  // const [offsetWidth, setOffsetWidth] = useState(1920); // Chrome/Firefox
+  // const [offsetWidth, setOffsetWidth] = useState(1872);    // Edge
+  const [offsetWidth, setOffsetWidth] = useState(1920); // Chrome/Firefox
   
   // Unsure of why this doesn't function correctly
   // const [offsetWidth, setOffsetWidth] = useState(size.width);
