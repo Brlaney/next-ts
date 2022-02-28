@@ -1,15 +1,30 @@
 // reynolds\index.ts
 
+function flow(Reynolds) {
+  var flow = '';
+
+  if (Reynolds > 4000) {
+    let flow = 'Turbulent';
+  } else if (Reynolds < 4000 && Reynolds > 2300) {
+    let flow = 'Transient';
+  } else {
+    let flow = 'Laminar';
+  };
+
+  return flow;
+};
+
 
 // Function (1.)
 export function Re1(p, u, L, mu) {
-  // Reynolds number using eqn 1
   const initial = p * u * L / mu;
 
   // Rounded to n decimal places (n==0 currently)
   const Re = initial.toFixed(0);
 
-  return Re;
+  const flowType = flow(initial);
+
+  return [Re, flowType];
 };
 
 
@@ -37,4 +52,8 @@ export function Re2(u, L, v) {
     μ = dynamic viscosity (Ns/m2, lbm/s ft)
     L = characteristic length (m, ft)
     ν = μ / ρ = kinematic viscosity (m2/s, ft2/s)
+
+  laminar - when Re < 2300
+  transient - when 2300 < Re < 4000
+  turbulent - when Re > 4000
 */
