@@ -1,7 +1,7 @@
 import { Bar } from 'react-chartjs-2';
 
 
-export const TestChart = ({ chartData }) => {
+const TestChart = ({ chartData }) => {
   return (
     <div>
       <Bar
@@ -22,3 +22,5 @@ export const TestChart = ({ chartData }) => {
     </div>
   );
 };
+
+export default TestChart;

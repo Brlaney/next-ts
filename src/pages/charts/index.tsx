@@ -1,29 +1,52 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
-import { TestChart } from '@/components/TestChart';
+import TestChart from '@/components/TestChart';
 import styles from '@/styles/pages/Charts.module.scss';
-import { cryptoData } from '@/lib/data/test';
+// import { cryptoData } from '@/lib/data/test';
+
+
+const cryptoData = [{
+  name: "Bitcoin",
+  priceUsd: "36627.2710684081282635"
+}, {
+  name: "Ethereum",
+  priceUsd: "2543.3426526834626211",
+},
+{
+  name: "Tether",
+  priceUsd: "1.0000029822112192",
+},
+{
+  name: "BNB",
+  priceUsd: "352.4310502823381116",
+}, {
+  name: "USD Coin",
+  priceUsd: "1.0013281398550895",
+}];
 
 
 const Charts = () => {
-  const [chartData, setChartData] = useState({});
+  const [chartData, setChartData] = useState({} || null);
+  // setChartData(null);
 
-  setChartData({
-    labels: cryptoData.map((crypto) => crypto.name),
-    datasets: [
-      {
-        label: 'Price in USD',
-        data: cryptoData.map((crypto) => crypto.priceUsd),
-        backgroundColor: [
-          '#ffbb11',
-          '#ecf0f1',
-          '#50AF95',
-          '#f3ba2f',
-          '#2a71d0'
-        ]
-      }
-    ]
-  });
+  useEffect(() => {
+    setChartData({
+      labels: cryptoData,
+      datasets: [
+        {
+          label: 'Price in USD',
+          data: cryptoData,
+          backgroundColor: [
+            '#ffbb11',
+            '#ecf0f1',
+            '#50AF95',
+            '#f3ba2f',
+            '#2a71d0'
+          ]
+        }
+      ]
+    });
+  }, [])
 
   return (
     <motion.div className={styles.container}>
