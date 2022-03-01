@@ -6,4 +6,12 @@ import frame_4 from '/public/svgs/frame_4.svg';
 import frame_5 from '/public/svgs/frame_5.svg';
 import frame_6 from '/public/svgs/frame_6.svg';
 
-export default [frame_0,frame_1,frame_2,frame_3,frame_4,frame_5,frame_6];
+export default [
+  frame_0,
+  frame_1,
+  frame_2,
+  frame_3,
+  frame_4,
+  frame_5,
+  frame_6
+];
