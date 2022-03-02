@@ -11,7 +11,9 @@ export default function Charts(props: any) {
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
-        <div className={styles.chart}>
+
+        {/* Column 1 */}
+        <motion.div className={styles.chart}>
           <Plot
             data={[
               {
@@ -26,11 +28,11 @@ export default function Charts(props: any) {
                 y: [19211, 144920, 2521268, 5375465, 6895126],
                 marker: {
                   color: [
-                    'rgba(144,103,198,0.7)',
-                    'rgba(75,68,83,0.7)',
-                    'rgba(176,168,185,0.7)',
-                    'rgba(201,88,64,0.7)',
-                    'rgba(141,34,19,0.7)'
+                    'rgba(144,103,198,0.5)',
+                    'rgba(75,68,83,0.5)',
+                    'rgba(176,168,185,0.5)',
+                    'rgba(201,88,64,0.5)',
+                    'rgba(141,34,19,0.5)'
                   ],
                   line: {
                     color: [
@@ -46,12 +48,16 @@ export default function Charts(props: any) {
               },
             ]}
             layout={{
-              width: 375,
-              height: 600,
-              // title: 'A Fancy Plot'
+              width: 350,
+              autoSize: true,
+              title: 'Followers on Spotify',
             }}
             {...props}
           />
+        </motion.div>
+
+        {/* Column 2 */}
+        <motion.div className={styles.chart}>
           <Plot
             data={[
               {
@@ -66,11 +72,11 @@ export default function Charts(props: any) {
                 y: [43, 49, 75, 82, 82],
                 marker: {
                   color: [
-                    'rgba(144,103,198,0.7)',
-                    'rgba(75,68,83,0.7)',
-                    'rgba(176,168,185,0.7)',
-                    'rgba(201,88,64,0.7)',
-                    'rgba(141,34,19,0.7)'
+                    'rgba(144,103,198,0.5)',
+                    'rgba(75,68,83,0.5)',
+                    'rgba(176,168,185,0.5)',
+                    'rgba(201,88,64,0.5)',
+                    'rgba(141,34,19,0.5)'
                   ],
                   line: {
                     color: [
@@ -86,13 +92,13 @@ export default function Charts(props: any) {
               },
             ]}
             layout={{
-              width: 375,
-              height: 600,
-              // title: 'A Fancy Plot'
+              width: 350,
+              autoSize: true,
+              title: 'Popularity on Spotify',
             }}
             {...props}
           />
-        </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   )
