@@ -15,10 +15,21 @@
     align-items: center;
     justify-content: center;
     align-content: center;
-    .chart {
+    .plotlyjs {
       margin: 0 0.4rem;
       height: 550px;
       width: 50%;
+      min-width: 350px;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    }
+    .chartjs {
+      margin: 0 0.4rem;
+      height: 450px;
+      width: 75%;
+      min-width: 450px;
       padding: 0.5rem 1.5rem;
       border: 1px solid $border-color;
       border-radius: 5px;

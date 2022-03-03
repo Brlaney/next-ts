@@ -56,13 +56,15 @@ export const data = {
   ],
 };
 
-export default function Tests() {
+export default function ChartJs() {
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
-        <motion.div className={styles.chart}>
+
+        <motion.div className={styles.chartjs}>
           <Line options={options} data={data} />
         </motion.div>
+
       </motion.div>
     </motion.div>
   );
