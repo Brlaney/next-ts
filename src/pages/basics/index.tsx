@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import styles from '@/styles/pages/Basics.module.scss';
+import styles from '@/styles/pages/Home.module.scss';
 
 const basics = [
   { id: 1, name: 'Products', link: '/basics/products' },
@@ -14,16 +14,28 @@ const Basics = () => {
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
-        <h2 className='uk-header'>
-          This is the basics page.
-        </h2>
-        {basics.map(link => (
-          <motion.div key={link.id}>
-            <Link href={link.link}>
-              <a className={styles.link}>{link.name}</a>
+        <motion.div className={styles.box}>
+          
+          <motion.h1 className='uk-header'>
+            This is the basics page.
+          </motion.h1>
+
+          {basics.map(link => (
+            <Link href={link.link} key={link.id}>
+              <motion.button
+                className='uk-button uk-button-primary'
+                whileHover={{
+                  zIndex: 1,
+                  scale: 1.06,
+                  transition: { duration: 0.3, easing: 'easeInOut' }
+                }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {link.name}
+              </motion.button>
             </Link>
-          </motion.div>
-        ))}
+          ))}
+        </motion.div>
       </motion.div>
     </motion.div>
   )
