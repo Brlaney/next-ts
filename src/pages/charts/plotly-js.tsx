@@ -1,25 +1,11 @@
 import * as React from 'react';
 import dynamic from 'next/dynamic'
-import { AnimationProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import styles from '@/styles/pages/Charts.module.scss';
 
 const Plot = dynamic(
   () => import('react-plotly.js'), { ssr: false }
 );
-
-export const chartsVariants: AnimationProps = {
-  transition: { delay: 0, duration: 2, ease: 'easeIn' },
-  variants: {
-    visible: {
-      fillOpacity: 1,
-      pathLength: 1,
-      transition: { delay: 0, duration: 4 },
-    },
-    hidden: { fillOpacity: 0, pathLength: 0 },
-  },
-};
-
 
 export default function PlotlyJs(props: any) {
   return (
@@ -29,11 +15,10 @@ export default function PlotlyJs(props: any) {
         {/* Column 1 */}
         <motion.div
           className={styles.plotlyjs}
-          {...chartsVariants}
           animate={{
             y: 0,
             opacity: 1,
-            transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }
+            transition: { duration: 1.2, ease: [0.6, -0.05, 0.1, 0.9] }
           }}
           initial={{ y: 60, opacity: 0 }}
         >
@@ -76,11 +61,10 @@ export default function PlotlyJs(props: any) {
         {/* Column 2 */}
         <motion.div
           className={styles.plotlyjs}
-          {...chartsVariants}
           animate={{
             y: 0,
             opacity: 1,
-            transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }
+            transition: { duration: 1.2, ease: [0.6, -0.05, 0.1, 0.9] }
           }}
           initial={{ y: 60, opacity: 0 }}
         >
