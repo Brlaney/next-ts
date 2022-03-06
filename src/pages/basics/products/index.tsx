@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styles from '@/styles/pages/Home.module.scss';
 
 
-const Products = () => {
+export default function Products() {
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
@@ -25,5 +25,3 @@ const Products = () => {
     </motion.div>
   )
 };
-
-export default Products;

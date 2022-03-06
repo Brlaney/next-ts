@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import styles from '@/styles/pages/Home.module.scss';
+import styles from '@/styles/pages/Basics.module.scss';
 
 
-const About = () => {
+export default function About () {
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
@@ -11,5 +11,3 @@ const About = () => {
     </motion.div>
   )
 };
-
-export default About;

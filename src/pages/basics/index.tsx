@@ -1,24 +1,49 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import styles from '@/styles/pages/Home.module.scss';
+import styles from '@/styles/pages/Basics.module.scss';
 
 const basics = [
-  { id: 1, name: 'Products', link: '/basics/products' },
-  { id: 2, name: 'Sign-up', link: '/basics/sign-up' },
-  { id: 3, name: 'Contact', link: '/basics/contact' },
-  { id: 4, name: 'About', link: '/basics/about' },
+  { id: 1, name: 'Products page', link: '/basics/products' },
+  { id: 2, name: 'Sign-up form', link: '/basics/sign-up' },
+  { id: 3, name: 'Contact form', link: '/basics/contact' },
+  { id: 4, name: 'About page', link: '/basics/about' },
+  { id: 5, name: 'Privacy policy page', link: '/basics/privacy-policy' },
 ];
 
-const Basics = () => {
+export default function Basics() {
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
-        <motion.div className={styles.box}>
-          
-          <motion.h1 className='uk-header'>
-            This is the basics page.
-          </motion.h1>
+
+        <motion.h1
+          className={styles.header}
+          animate={{
+            x: 0,
+            opacity: 1,
+            transition: {
+              duration: 0.8,
+              ease: [0.8, 0.1, 0.1, 0.95]
+            }
+          }}
+          initial={{ x: 200, opacity: 0 }}
+        >
+          This is the basics page
+        </motion.h1>
+
+        <motion.div className={styles.box}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              delay: 0.9,
+              duration: 1.8,
+              ease: [0.2, 0.4, -0.3, 0.95],
+              staggerChildren: 0.45
+            }
+          }}
+          initial={{ y: 150, opacity: 0 }}
+        >
 
           {basics.map(link => (
             <Link href={link.link} key={link.id}>
@@ -40,5 +65,3 @@ const Basics = () => {
     </motion.div>
   )
 };
-
-export default Basics;
