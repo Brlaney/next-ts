@@ -38,3 +38,6 @@ yarn-error.log*
 # lock-files
 package-lock.json
 yarn.lock
+
+# yarn stuff
+/.yarn
