@@ -35,7 +35,7 @@ export const options = {
     delay: (context) => {
       let delay = 0;
       if (context.type === 'data' && context.mode === 'default' && !delayed) {
-        delay = context.dataIndex * 50 + context.datasetIndex * 100;
+        delay = context.dataIndex * 40 + context.datasetIndex * 20;
       }
       return delay;
     },
@@ -47,6 +47,7 @@ export const options = {
     title: {
       display: true,
       text: 'US Tornado Data',
+      align: 'start',
     },
   },
 };
@@ -68,7 +69,7 @@ export const data = {
       backgroundColor: 'rgba(86, 51, 140, 0.5)',
       borderColor: 'rgba(86, 51, 140, 0.8)',
       pointBackgroundColor: 'rgba(86, 51, 140, 0.5)',
-      tension: 0.25,
+      tension: 0.3,
     },
     {
       label: 'Occurrences',
@@ -77,7 +78,7 @@ export const data = {
       backgroundColor: 'rgba(191, 77, 99, 0.5)',
       borderColor: 'rgba(191, 77, 99, 0.8)',
       pointBackgroundColor: 'rgba(191, 77, 99, 0.5)',
-      tension: 0.25,
+      tension: 0.3,
     },
   ],
 };
