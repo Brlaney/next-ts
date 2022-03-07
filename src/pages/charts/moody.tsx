@@ -25,6 +25,21 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  radius: 3,
+  hoverRadius: 10,
+  hitRadius: 30,
+  animation: {
+    onComplete: () => {
+      delayed = true;
+    },
+    delay: (context) => {
+      let delay = 0;
+      if (context.type === 'data' && context.mode === 'default' && !delayed) {
+        delay = context.dataIndex * 420 + context.datasetIndex * 350;
+      }
+      return delay;
+    },
+  },
   plugins: {
     legend: {
       position: 'top' as const,
@@ -35,6 +50,8 @@ export const options = {
     },
   },
 };
+
+let delayed;
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -56,12 +73,21 @@ export const data = {
   ],
 };
 
-export default function Reynolds() {
+export default function Moody() {
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
 
-        <motion.div className={styles.chartjs}>
+        <motion.div
+          className={styles.chartjs}
+          animate={{
+            y: 0,
+            x: 0,
+            opacity: 1,
+            transition: { duration: 2.2, ease: [0.88, -0.01, -0.05, 0.95] }
+          }}
+          initial={{ y: 0, x: 300, opacity: 0 }}
+        >
           <Line options={options} data={data} />
         </motion.div>
 

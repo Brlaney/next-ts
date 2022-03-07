@@ -2,10 +2,10 @@ import * as React from 'react';
 import { motion } from 'framer-motion';
 // import images from '@/components/Images';
 import { Re1, Re2 } from '@/lib/utils/reynolds';
-import styles from '@/styles/pages/Moody.module.scss';
+import styles from '@/styles/pages/Fluids.module.scss';
 
 
-const Moody = () => {
+const Fluids = () => {
   const inputRef = React.useRef<HTMLInputElement | null>(null);
   const [currentRef, setCurrentRef] = React.useState(1 | 0);
 
