@@ -1,9 +1,8 @@
 @import '../theme/theme';
 @import '../mixins/width.scss';
-// @import '../mixins/height.scss';
 
 .container {
-  height: 810px;
+  height: 800px;
   width: 100vw;
   color: $bg-d;
   display: flex;
@@ -11,7 +10,7 @@
   align-items: flex-start;
   justify-content: center;
   .carousel {
-    margin: 1rem 0;
+    margin: 0 0 3rem 0;
     cursor: grab;
     overflow: hidden;
     .innerCarousel {

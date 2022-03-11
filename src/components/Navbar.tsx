@@ -5,7 +5,7 @@ const links = [
   { id: 1, name: 'Basic Pages', link: '/basics' },
   { id: 2, name: 'Carousel', link: '/carousel' },
   { id: 3, name: 'Bars', link: '/bars' },
-  { id: 4, name: 'Re', link: '/moody' },
+  { id: 4, name: 'Re', link: '/fluids' },
   { id: 5, name: 'Charts', link: '/charts' },
 ];
 

@@ -8,6 +8,7 @@ const links = [
   { id: 2, name: 'Plotly.js sample', link: '/charts/plotlyjs' },
   { id: 3, name: 'Disciplinary action', link: '/charts/bpr' },
   { id: 4, name: 'Hydraulics chart (moody)', link: '/charts/moody' },
+  { id: 5, name: 'Dashboard (beta)', link: '/charts/dashboard' },
 ];
 
 const Charts = () => {

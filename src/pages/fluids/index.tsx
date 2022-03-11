@@ -58,4 +58,4 @@ const Fluids = () => {
   )
 };
 
-export default Moody;
+export default Fluids;

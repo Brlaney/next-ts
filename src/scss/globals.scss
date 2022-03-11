@@ -7,8 +7,8 @@ body {
   color: $bg-d;
   font-family: $primary-font;
   overflow-x: hidden;
+  overflow-y: hidden;
   max-height: 100vh;
-  // background-color: $bg-d;
 }
 
 a { font-family: $tertiary-font; }
