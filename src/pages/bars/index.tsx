@@ -1,33 +1,27 @@
 import * as React from 'react';
-import {
-  motion,
-  // useMotionValue,
-  // useTransform,
-  // animate
-} from 'framer-motion';
-import frames from '@/components/Frames';
-import Image from 'next/image';
+import { motion } from 'framer-motion';
+import One from '@/components/frames/One';
+import Two from '@/components/frames/Two';
+import Three from '@/components/frames/Three';
+import Four from '@/components/frames/Four';
+import Five from '@/components/frames/Five';
+import Six from '@/components/frames/Six';
+import Seven from '@/components/frames/Seven';
 import styles from '@/styles/pages/Bars.module.scss';
-import { stringify } from 'querystring';
+
 
 export default function Bars() {
   const [step, setStep] = React.useState(0);
 
   const handleClick = (step) => {
-    // let check = 7 % step;
+    let nextStep = step + 1;
+    let check = nextStep % 7;
 
-    if (step == 7) {
-      setStep(0)
-    } else {
-
-      for (let i = 0; i < 1; i++) {
-        setStep(step + 1);
-      }
-    }
+    setStep(check);
   };
 
   React.useEffect(() => {
-    console.log(step);
+    // console.log(step); // test state value
   }, [step]);
 
   return (
@@ -35,26 +29,15 @@ export default function Bars() {
       <motion.div className={styles.grid}>
         <motion.div className={styles.box}>
 
-          {/* Iterate over your array of images */}
-          {frames.map((frame, i: number) => (
-            <motion.div className={styles.item} key={i}>
-              {frame}
-            </motion.div>
-          ))}
-
-          {/* <motion.div
-            className={styles.item}
-            onClick={() => { handleClick(step) }}
-          > */}
-            {/* <Image
-              id={stringify({step})}
-              width={600}
-              height={246.15}
-              src={frames[step]}
-            /> */}
-            {/* <frame_0 /> */}
-            
-          {/* </motion.div> */}
+          <motion.div className={styles.item} onClick={() => { handleClick(step) }}>
+            {step === 0 && <One />}
+            {step === 1 && <Two />}
+            {step === 2 && <Three />}
+            {step === 3 && <Four />}
+            {step === 4 && <Five />}
+            {step === 5 && <Six />}
+            {step === 6 && <Seven />}
+          </motion.div>
         </motion.div>
       </motion.div>
     </motion.div>

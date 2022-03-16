@@ -1,5 +1,9 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
+import {
+  mainPathVariant,
+  shapeVariations
+} from '@/lib/animations';
 
 const Seven = () => {
   return (
