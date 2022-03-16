@@ -16,7 +16,6 @@ export default function Bars() {
   const handleClick = (step) => {
     let nextStep = step + 1;
     let check = nextStep % 7;
-
     setStep(check);
   };
 
