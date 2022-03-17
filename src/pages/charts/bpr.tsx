@@ -91,11 +91,14 @@ export default function Bpr({...props}) {
       <motion.div className={styles.grid}>
 
         <motion.div
-          className={styles.chartjs}
+          className={styles.wide}
           animate={{
             y: 0,
             opacity: 1,
-            transition: { duration: 1.2, ease: [0.6, -0.05, 0.01, 0.99] }
+            transition: {
+              duration: 1.2,
+              ease: [0.6, -0.05, 0.01, 0.99]
+            }
           }}
           initial={{ y: 60, opacity: 0 }}
         >

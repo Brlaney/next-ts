@@ -10,7 +10,7 @@ const Plot = dynamic(
 export default function PlotlyJs(props: any) {
   return (
     <motion.div className={styles.container} layout>
-      <motion.div className={styles.grid}>
+      <motion.div className={styles.gridrow}>
 
         {/* Column 1 */}
         <motion.div

@@ -79,12 +79,15 @@ export default function Moody() {
       <motion.div className={styles.grid}>
 
         <motion.div
-          className={styles.chartjs}
+          className={styles.wide}
           animate={{
             y: 0,
             x: 0,
             opacity: 1,
-            transition: { duration: 2.2, ease: [0.88, -0.01, -0.05, 0.95] }
+            transition: {
+              duration: 2.2,
+              ease: [0.88, -0.01, -0.05, 0.95]
+            }
           }}
           initial={{ y: 0, x: 300, opacity: 0 }}
         >

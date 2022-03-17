@@ -7,6 +7,7 @@ const links = [
   { id: 3, name: 'Bars', link: '/bars' },
   { id: 4, name: 'Re', link: '/fluids' },
   { id: 5, name: 'Charts', link: '/charts' },
+  { id: 6, name: 'BPR Test', link: '/tests/bpr-data' },
 ];
 
 export default function Navbar() {

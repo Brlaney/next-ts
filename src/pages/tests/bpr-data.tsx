@@ -9,7 +9,10 @@ export default function BprData() {
   const fetchData = async () => {
     const response = await fetch('https://raw.githubusercontent.com/Brlaney/my-datasets/main/bpr/data.json');
     const data = await response.json();
-    console.log(data);
+    
+    // Testing response output:
+    // console.log(data);
+    
     setBpr(data);
   };
 
@@ -21,34 +24,36 @@ export default function BprData() {
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
 
-        <motion.h1
-          className={styles.header}
-          animate={{
-            x: 0,
-            opacity: 1,
-            transition: {
-              duration: 0.8,
-              ease: [0.8, 0.1, 0.1, 0.95]
-            }
-          }}
-          initial={{ x: 200, opacity: 0 }}
-        >
-          TN Supreme Court
-        </motion.h1>
-        <motion.h2
-          className={styles.header}
-          animate={{
-            x: 0,
-            opacity: 1,
-            transition: {
-              duration: 0.8,
-              ease: [0.8, 0.1, 0.1, 0.95]
-            }
-          }}
-          initial={{ x: 200, opacity: 0 }}
-        >
-          Board of Professional Responsibility
-        </motion.h2>
+        <motion.div className={styles.header}>
+          <motion.h1
+            className={styles.title1}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                duration: 0.8,
+                ease: [0.8, 0.1, 0.1, 0.95]
+              }
+            }}
+            initial={{ x: 200, opacity: 0 }}
+          >
+            TN Supreme Court
+          </motion.h1>
+          <motion.h2
+            className={styles.title2}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                duration: 0.8,
+                ease: [0.8, 0.1, 0.1, 0.95]
+              }
+            }}
+            initial={{ x: 200, opacity: 0 }}
+          >
+            Board of Professional Responsibility
+          </motion.h2>
+        </motion.div>
 
         <motion.div className={styles.box}
           animate={{
