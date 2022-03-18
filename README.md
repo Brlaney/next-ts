@@ -8,8 +8,16 @@
 
 </br>
 
-## Demo
+## Demo the features
 
+</br>
+
+<div align="center">
+  <h4><b>Carousel</b></h4>
+  <img src="https://user-images.githubusercontent.com/64326462/159073335-3a099f42-7da1-41d8-9c96-012bd2b75b77.gif" />
+</div>
+
+</br>
 </br>
 
 <div align="center">
