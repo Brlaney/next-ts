@@ -3,15 +3,15 @@ import { motion } from 'framer-motion';
 import styles from '@/styles/pages/Tests.module.scss';
 
 
-export default function BprData() {
+export default function Publications() {
   const [bpr, setBpr] = React.useState([]);
 
   const fetchData = async () => {
-    const response = await fetch('https://raw.githubusercontent.com/Brlaney/my-datasets/main/bpr/data.json');
+    const response = await fetch('http://localhost:3000/api/bpr');
     const data = await response.json();
     
     // Testing response output:
-    // console.log(data);
+    console.log(data);
     
     setBpr(data);
   };
