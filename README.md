@@ -6,7 +6,7 @@
   </p>
 </div>
 
-## A Next.js template repository pre-configured with my go-to frontend stack
+## Featured tech
 
 - Typescript (easier debugging, clean & consistant code)
 - Scss  (custom themes, mixins, & more)
@@ -22,6 +22,9 @@
 - Bars
 - Charts
 - Publications
+- API endpoints:
+  - bpr (bpr = Board of Professional Responsibility)
+  - [id]
 
 </br>
 
