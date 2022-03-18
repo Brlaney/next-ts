@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es6",
     "baseUrl": "./",
     "paths": {
       "@/components/*": [ "./src/components/*" ],
@@ -23,5 +23,5 @@
     "types": ["node"]
   },
   "include": [ "src", "next-env.d.ts", "**/*.ts", "**/*.tsx", "public/js" ],
-  "exclude": [ "dist", ".next", "node_modules", "build" ]
+  "exclude": [ "node_modules" ]
 }
