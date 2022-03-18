@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Card from '@/components/Card';
 import styles from '@/styles/pages/Tests.module.scss';
 
 
