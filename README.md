@@ -23,8 +23,8 @@
 - Charts
 - Publications
 - API endpoints:
-  - bpr (bpr = Board of Professional Responsibility)
-  - [id]
+  - **bpr** (bpr = Board of Professional Responsibility)
+  - **[id]**
 
 </br>
 
