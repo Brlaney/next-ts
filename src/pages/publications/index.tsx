@@ -69,7 +69,7 @@ export default function Publications() {
           }}
           initial={{ y: 150, opacity: 0 }}
         >
-          POOP
+          <Card />
         </motion.div>
       </motion.div>
     </motion.div>

@@ -5,10 +5,9 @@ import styles from '@/styles/pages/Charts.module.scss';
 
 const links = [
   { id: 1, name: 'Chart.js sample', link: '/charts/chartjs' },
-  { id: 2, name: 'Plotly.js sample', link: '/charts/plotlyjs' },
-  { id: 3, name: 'Disciplinary action', link: '/charts/bpr' },
-  { id: 4, name: 'Hydraulics chart (moody)', link: '/charts/moody' },
-  { id: 5, name: 'Dashboard (beta)', link: '/charts/dashboard' },
+  { id: 2, name: 'Disciplinary action', link: '/charts/bpr' },
+  { id: 3, name: 'Hydraulics chart (moody)', link: '/charts/moody' },
+  { id: 4, name: 'Dashboard (beta)', link: '/charts/dashboard' },
 ];
 
 const Charts = () => {
