@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 import One from '@/components/frames/One';
 import Two from '@/components/frames/Two';
 import Three from '@/components/frames/Three';
@@ -29,13 +29,15 @@ export default function Bars() {
         <motion.div className={styles.box}>
 
           <motion.div className={styles.item} onClick={() => { handleClick(step) }}>
-            {step === 0 && <One />}
-            {step === 1 && <Two />}
-            {step === 2 && <Three />}
-            {step === 3 && <Four />}
-            {step === 4 && <Five />}
-            {step === 5 && <Six />}
-            {step === 6 && <Seven />}
+            <AnimateSharedLayout>
+              {step === 0 && <One />}
+              {step === 1 && <Two />}
+              {step === 2 && <Three />}
+              {step === 3 && <Four />}
+              {step === 4 && <Five />}
+              {step === 5 && <Six />}
+              {step === 6 && <Seven />}
+            </AnimateSharedLayout>
           </motion.div>
         </motion.div>
       </motion.div>

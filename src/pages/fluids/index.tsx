@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { btnVariant } from '@/lib/animations/buttons';
+import { formVariant, submitVariant } from '@/lib/animations/forms';
+import Image from 'next/image';
 import { Re1, Re2 } from '@/lib/utils/reynolds';
+import eqtns from '@/components/icons/Eqtns';
 import styles from '@/styles/pages/Fluids.module.scss';
 
 
@@ -35,6 +37,8 @@ const Fluids = () => {
     setReynolds(re);
   };
 
+
+  // Runs everytime reynolds state value changes
   React.useEffect(() => {
     if (reynolds != undefined) {
       console.log('Current reynolds number: ' + reynolds);
@@ -45,13 +49,24 @@ const Fluids = () => {
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
+        <motion.div className={styles.equations}>
+          <Image
+            className={styles.eqn}
+            width={225}
+            height={75}
+            src={eqtns[0]}
+          />
+        </motion.div>
         <motion.form
           className={styles.form}
           onSubmit={(e) => handleSubmit(e)}
+          variants={formVariant}
+          animate='animate'
+          initial='initial'
         >
           <motion.div className={styles.inputs}>
             <label className={styles['input-label']} htmlFor='form-horizontal-text'>
-              Density (p)
+              Density, p (pcf)
             </label>
             <input
               className='uk-input'
@@ -66,7 +81,7 @@ const Fluids = () => {
 
           <motion.div className={styles.inputs}>
             <label className={styles['input-label']} htmlFor='form-horizontal-text'>
-              Velocity (u)
+              Velocity, u (fps)
             </label>
             <input
               className='uk-input'
@@ -81,7 +96,7 @@ const Fluids = () => {
 
           <motion.div className={styles.inputs}>
             <label className={styles['input-label']} htmlFor='form-horizontal-text'>
-              Characteristic length (L)
+              Characteristic length, L (ft)
             </label>
             <input
               className='uk-input'
@@ -96,7 +111,7 @@ const Fluids = () => {
 
           <motion.div className={styles.inputs}>
             <label className={styles['input-label']} htmlFor='form-horizontal-text'>
-              Dynamic viscosity (mu)
+              Dynamic viscosity, mu (lbs/sf)
             </label>
             <input
               className='uk-input'
@@ -112,7 +127,7 @@ const Fluids = () => {
           <motion.button
             className='uk-button'
             type='submit'
-            variants={btnVariant}
+            variants={submitVariant}
             whileHover='whileHover'
             animate='animate'
             whileTap='whileTap'

@@ -69,11 +69,11 @@ const Publications = ({ publications }: InferGetStaticPropsType<typeof getStatic
               <motion.div id={styles.body} className='uk-card-body'>
                 <p className={styles.paragraph}>{publication.title}</p>
               </motion.div>
-              <motion.div className='uk-card-footer'>
 
-                {/* Footer link */}
+              {/* Card footer */}
+              <motion.div className='uk-card-footer'>
                 <Link href={publication.link}>
-                  <a className='uk-button uk-button-text'>
+                  <a className={styles.link} target='_blank' rel='noopener noreferrer'>
                     View publication
                   </a>
                 </Link>

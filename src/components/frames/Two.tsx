@@ -12,6 +12,7 @@ const Two = () => {
       initial='initial'
       animate='animate'
       exit={{ opacity: 0 }}
+      layout
     >
       <svg width='390' height='160' viewBox='0 0 390 160' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <g

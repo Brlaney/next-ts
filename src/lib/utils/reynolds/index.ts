@@ -1,25 +1,19 @@
 // reynolds\index.ts
 
-
-// Function (1.)
+// Function (1.) Reynolds number using density (p) and dynamic viscosity (mu)
 export function Re1(p, u, L, mu) {
   const initial = p * u * L / mu;
-
-  // Rounded to n decimal places (n==0 currently)
-  const Re = initial.toFixed(0);
+  const Re = initial.toFixed(0); // Round to n decimal places (where n==0)
 
   return parseInt(Re);
 };
 
-// Function (2.)
+// Function (2.) Reynolds number using only kinematic viscosity (v)
 export function Re2(u, L, v) {
-  // Reynolds number using eqn 2
-  let initial = u * L / v;
+  const initial = u * L / v;
+  const Re = initial.toFixed(6); // Rounded to 5 decimal places
 
-  // Rounded to 5 decimal places
-  let Re = initial.toFixed(6);
-
-  return Re;
+  return parseInt(Re);
 };
 
 /*
@@ -29,7 +23,7 @@ export function Re2(u, L, v) {
  
   where:
     Re = Reynolds Number (non-dimensional)   (1)
-    ρ = density (kg/m3, lbm/ft3)
+    ρ = density (kg/m3, lb/ft3)
     u = velocity based on the actual cross section area of the duct or pipe (m/s, ft/s)
     μ = dynamic viscosity (Ns/m2, lbm/s ft)
     L = characteristic length (m, ft)
