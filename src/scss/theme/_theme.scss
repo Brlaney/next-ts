@@ -33,15 +33,39 @@ $bg-df-500: rgba(124, 131, 138, 0.6);
 $bg-df-700: rgba(87, 93, 100, 0.6);
 $bg-df-900: rgba(52, 58, 64, 0.85);
 
-// Brand colors
-$uikit: #2b93bd;
-$chartjs: #ff6181;
-$react: #00d6fd;
-$ui-primary: #1e87f0;
+// Box-shadows
+$base-box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+$base-carousel-shadow: rgba(0, 0, 0, 0.4) 0px 8px 14px;
 
-$btn-disabled: #A8AABC;
-$btn-width: 160px;
-$btn-height: 60px;
+// Borders
+$border-radius-sm: 3px;
+$border-radius-md: 6px;
+$border-radius-lg: 9px;
+
+// Column margins
+$col-margin-sm: 0.44rem 0;
+$col-margin: 0.88rem 0;
+$col-margin-md: 1.32rem 0;
+$col-margin-lg: 1.76rem 0;
+
+// Row margins
+$row-margin-sm: 0 0.44rem;
+$row-margin: 0 0.88rem;
+$row-margin-md: 0 1.32rem;
+$row-margin-lg: 0 1.76rem;
+
+// Column paddings
+$col-padding-sm: 0.44rem 0;
+$col-padding: 0.88rem 0;
+$col-padding-md: 1.32rem 0;
+$col-padding-lg: 1.76rem 0;
+
+// Row paddings
+$row-padding-sm: 0 0.44rem;
+$row-padding: 0 0.88rem;
+$row-padding-md: 0 1.32rem;
+$row-padding-lg: 0 1.76rem;
+
 
 // Primary, secondary, and tertiary font-family
 $primary-font: 'Rubik',

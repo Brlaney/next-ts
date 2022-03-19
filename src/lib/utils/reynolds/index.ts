@@ -1,19 +1,5 @@
 // reynolds\index.ts
 
-function flow(Reynolds) {
-  var flow = '';
-
-  if (Reynolds > 4000) {
-    let flow = 'Turbulent';
-  } else if (Reynolds < 4000 && Reynolds > 2300) {
-    let flow = 'Transient';
-  } else {
-    let flow = 'Laminar';
-  };
-
-  return flow;
-};
-
 
 // Function (1.)
 export function Re1(p, u, L, mu) {
@@ -22,11 +8,8 @@ export function Re1(p, u, L, mu) {
   // Rounded to n decimal places (n==0 currently)
   const Re = initial.toFixed(0);
 
-  const flowType = flow(initial);
-
-  return [Re, flowType];
+  return parseInt(Re);
 };
-
 
 // Function (2.)
 export function Re2(u, L, v) {
@@ -38,7 +21,6 @@ export function Re2(u, L, v) {
 
   return Re;
 };
-
 
 /*
   Re = ρ u L / μ              (eqn 1)

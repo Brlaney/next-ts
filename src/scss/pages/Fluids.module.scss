@@ -13,13 +13,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .moody {
-        height: 200px;
-        width: 350px;
-        border-radius: 3px;
-        padding: 0.6rem;
-        text-align: center;
-        font-size: 1.33rem;
+    .form {
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1rem;
+      .inputs {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .input-label {
+          text-align: justify;
+
+        }
+        input {
+          width: 300px;
+          margin: $col-margin-sm;
+        }
+      }
+      button {
+        color: #fff;
+        width: 100%;
+        margin: $col-margin;
+        border-radius: $border-radius-sm;
+        background-color: $secondary;
+      }
     }
   }
 }

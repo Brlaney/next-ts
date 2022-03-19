@@ -10,10 +10,10 @@
   align-items: flex-start;
   justify-content: center;
   .carousel {
-    margin: 1.5rem 0 1.5rem 0;
+    margin: 1.5rem 0;
     cursor: grab;
     overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 14px;
+    box-shadow: $base-carousel-shadow;
     background: $bg-d-900;
     .innerCarousel {
       display: flex;

@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: flex-start;
     .header {
-      margin: 1rem 0.33rem;
+      margin: 2rem 0;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -23,6 +23,8 @@
         font-size: 3.5rem;
         margin: 0 0 0.2rem 0;
         text-align: justify;
+        padding: 0 0 0.33rem 0;
+        border-bottom: 2px solid $border-color;
       }
       .title2 {
         font-size: 2.3rem;
@@ -38,6 +40,40 @@
       button {
         width: 260px;
         margin: 0.7rem 0;
+      }
+      .card {
+        min-width: 750px;
+        margin: 0.66rem 0.22rem;
+        border-radius: 4px;
+        border: 1px solid $border-color;
+        background-color: $bg-d;
+        color: #fff;
+        #header {
+          color: #fff;
+          .card-grid {
+            display: flex;
+            flex-direction: row;
+            color: #fff;
+            .col1 {
+              width: auto;
+            }
+            .col2 {
+              margin: 0 0.3rem;
+              color: #fff;
+              #title {
+                color: #fff;
+              }
+              p {
+                color: #fff;
+              }
+            }
+          }
+        }
+        #body {
+          .paragraph {
+            color: #fff;
+          }
+        }
       }
     }
   }
