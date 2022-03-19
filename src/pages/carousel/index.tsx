@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import images from '@/components/images/Images';
 import Image from 'next/image';
 import styles from '@/styles/pages/Carousel.module.scss';
-import useWindowSize from '@/lib/utils/viewport';
+// import useWindowSize from '@/lib/utils/viewport';
 
 
 const Carousel = () => {
   // Display screen width/height: {size.width}{size.height}
-  const size = useWindowSize();
-  console.log(size.width)
+  // const size = useWindowSize();
+  // console.log(size.width)
 
   const [width, setWidth] = useState(0);
   // const [offsetWidth, setOffsetWidth] = useState(1872);    // Edge
@@ -19,19 +19,19 @@ const Carousel = () => {
   // const [offsetWidth, setOffsetWidth] = useState(size.width);
   const carousel = useRef<HTMLDivElement>(null);
   
-  useEffect(() => {
-    // Test the ref/output in browsers console
-    // console.log('\nScroll width: ' + carousel.current.scrollWidth);
-    // console.log('\nOffset width: ' + carousel.current.offsetWidth);
-    setWidth(carousel.current.scrollWidth - offsetWidth);
-  }, []);
+  // useEffect(() => {
+  //   // Test the ref/output in browsers console
+  //   // console.log('\nScroll width: ' + carousel.current.scrollWidth);
+  //   // console.log('\nOffset width: ' + carousel.current.offsetWidth);
+  //   setWidth(carousel.current.scrollWidth - offsetWidth);
+  // }, []);
 
   return (
     <motion.div className={styles.container}>
       <motion.div ref={carousel} className={styles.carousel}>
         <motion.div
           drag='x'
-          dragConstraints={{ right: 0, left: -width }}
+          dragConstraints={{ right: 0, left: -1920 }}
           className={styles.innerCarousel}
         >
 
