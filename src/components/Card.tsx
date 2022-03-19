@@ -1,9 +1,11 @@
 // import Link from 'next/link';
 import Image from 'next/image';
 import icons from '@/components/icons/Icons';
-// import styles from '@/styles/components/Card.module.scss';
+import Link from 'next/link';
+import styles from '@/styles/components/Card.module.scss';
 
-export default function Card() {
+
+export default function Card(props) {
   return (
     <div className='uk-card uk-card-default uk-width-1-2@m'>
       <div className='uk-card-header'>

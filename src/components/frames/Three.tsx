@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   mainPathVariant,
   shapeVariations
-} from '@/lib/animations';
+} from '@/lib/animations/svgs';
 
 const Three = () => {
   return (

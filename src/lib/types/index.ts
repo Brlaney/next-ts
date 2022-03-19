@@ -1,4 +1,5 @@
-export interface IPublications {
+export interface IPublication {
+  id: number;
   date: string;
   title: string;
   link: string;

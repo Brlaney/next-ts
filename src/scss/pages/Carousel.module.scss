@@ -2,7 +2,7 @@
 @import '../mixins/width.scss';
 
 .container {
-  height: 800px;
+  height: 840px;
   width: 100vw;
   color: $bg-d;
   display: flex;
@@ -10,9 +10,11 @@
   align-items: flex-start;
   justify-content: center;
   .carousel {
-    margin: 0 0 3rem 0;
+    margin: 1.5rem 0 1.5rem 0;
     cursor: grab;
     overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 14px;
+    background: $bg-d-900;
     .innerCarousel {
       display: flex;
       background: $bg-d-900;

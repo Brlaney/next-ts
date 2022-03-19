@@ -1,37 +1,28 @@
-import { useRef, useEffect, useState } from 'react';
+import * as React from 'react';
 import { motion } from 'framer-motion';
 import images from '@/components/images/Images';
 import Image from 'next/image';
 import styles from '@/styles/pages/Carousel.module.scss';
 // import useWindowSize from '@/lib/utils/viewport';
 
-
 const Carousel = () => {
-  // Display screen width/height: {size.width}{size.height}
+  // Display screen width/height:
   // const size = useWindowSize();
-  // console.log(size.width)
 
-  const [width, setWidth] = useState(0);
-  // const [offsetWidth, setOffsetWidth] = useState(1872);    // Edge
-  const [offsetWidth, setOffsetWidth] = useState(1920); // Chrome/Firefox
-  
-  // Unsure of why this doesn't function correctly
+  const [width] = React.useState(10252);
+  // const [offsetWidth, setOffsetWidth] = useState(1920); // Chrome/Firefox
+  // const [offsetWidth, setOffsetWidth] = useState(1872); // Edge
   // const [offsetWidth, setOffsetWidth] = useState(size.width);
-  const carousel = useRef<HTMLDivElement>(null);
-  
-  // useEffect(() => {
-  //   // Test the ref/output in browsers console
-  //   // console.log('\nScroll width: ' + carousel.current.scrollWidth);
-  //   // console.log('\nOffset width: ' + carousel.current.offsetWidth);
-  //   setWidth(carousel.current.scrollWidth - offsetWidth);
-  // }, []);
 
+  // Define reference to carousel
+  const carousel = React.useRef<HTMLDivElement>(null);
+  
   return (
     <motion.div className={styles.container}>
       <motion.div ref={carousel} className={styles.carousel}>
         <motion.div
           drag='x'
-          dragConstraints={{ right: 0, left: -1920 }}
+          dragConstraints={{ right: 0, left: -width }}
           className={styles.innerCarousel}
         >
 
