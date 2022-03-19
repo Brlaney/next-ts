@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
+import { chartVariant } from '@/lib/animations/charts';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,6 +12,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import Back from '@/components/Back';
 import styles from '@/styles/pages/Charts.module.scss';
 
 ChartJS.register(
@@ -74,22 +76,18 @@ export const data = {
 };
 
 export default function Moody() {
+  const endpoint = '/charts';
+  
   return (
     <motion.div className={styles.container}>
+      <Back link={endpoint} />
       <motion.div className={styles.grid}>
 
         <motion.div
           className={styles.wide}
-          animate={{
-            y: 0,
-            x: 0,
-            opacity: 1,
-            transition: {
-              duration: 2.2,
-              ease: [0.88, -0.01, -0.05, 0.95]
-            }
-          }}
-          initial={{ y: 0, x: 300, opacity: 0 }}
+          variants={chartVariant}
+          animate='animate'
+          initial='initial'
         >
           <Line options={options} data={data} />
         </motion.div>

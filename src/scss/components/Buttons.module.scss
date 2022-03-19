@@ -1,0 +1,26 @@
+@import '../theme/theme';
+@import '../mixins/width.scss';
+@import '../mixins/height.scss';
+
+#goback {
+  position: absolute;
+  width: 46px;
+  height: 32px;
+  padding: 0.1rem 0.5rem;
+  background-color: $secondary;
+  color: $light;
+  border: 0;
+  border-radius: 3px;
+  left: 2%;
+  margin: 1rem 0 1rem 0;
+  top: 10%;
+  @include respond-below-height(sm) {
+    top: 11%;
+    @include respond-below-height(xs) {
+      top: 12%;
+      @include respond-below-height(xxs) {
+        top: 16%;
+      }
+    }
+  }
+}

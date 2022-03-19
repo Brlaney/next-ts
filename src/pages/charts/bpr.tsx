@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
+import { chartVariant } from '@/lib/animations/charts';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,6 +13,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import Back from '@/components/Back';
 import styles from '@/styles/pages/Charts.module.scss';
 
 ChartJS.register(
@@ -85,22 +87,19 @@ const data = {
   ],
 };
 
-export default function Bpr({...props}) {
+export default function Bpr({ ...props }) {
+  const endpoint = '/charts';
+  
   return (
     <motion.div className={styles.container}>
+      <Back link={endpoint} />
       <motion.div className={styles.grid}>
 
         <motion.div
           className={styles.wide}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: {
-              duration: 1.2,
-              ease: [0.6, -0.05, 0.01, 0.99]
-            }
-          }}
-          initial={{ y: 60, opacity: 0 }}
+          variants={chartVariant}
+          animate='animate'
+          initial='initial'
         >
           <Bar
             options={options}

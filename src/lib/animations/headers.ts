@@ -1,4 +1,4 @@
-export const headers = {
+export const headerVariant = {
   initial: {
     x: 200,
     opacity: 0,
@@ -11,7 +11,7 @@ export const headers = {
   }
 };
 
-export const box = {
+export const boxVariant = {
   initial: {
     y: 150,
     opacity: 0,

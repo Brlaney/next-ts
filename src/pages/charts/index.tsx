@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { btnVariant } from '@/lib/animations/buttons';
 import styles from '@/styles/pages/Charts.module.scss';
 
 const links = [
-  { id: 1, name: 'Chart.js sample', link: '/charts/chartjs' },
-  { id: 2, name: 'Disciplinary action', link: '/charts/bpr' },
-  { id: 3, name: 'Hydraulics chart (moody)', link: '/charts/moody' },
-  { id: 4, name: 'Dashboard (beta)', link: '/charts/dashboard' },
+  { id: 1, name: 'US Tornado Timeline', link: '/charts/chartjs' },
+  { id: 2, name: 'BPR Publications', link: '/charts/bpr' },
+  { id: 3, name: 'Moody Diagram', link: '/charts/moody' },
+  { id: 4, name: 'Dashboard', link: '/charts/dashboard' },
 ];
 
 const Charts = () => {
@@ -20,24 +21,11 @@ const Charts = () => {
             <Link key={link.id} href={link.link}>
               <motion.button
                 className='uk-button uk-button-primary'
-                whileHover={{
-                  zIndex: 1,
-                  scale: 1.06,
-                  transition: {
-                    duration: 0.3,
-                    ease: [0.6, -0.05, 0.01, 0.99]
-                  }
-                }}
-                animate={{
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    duration: 1.2,
-                    ease: [0.6, -0.05, 0.01, 0.99]
-                  }
-                }}
-                whileTap={{ scale: 0.9 }}
-                initial={{ y: 300, opacity: 0 }}
+                variants={btnVariant}
+                whileHover='whileHover'
+                animate='animate'
+                whileTap='whileTap'
+                initial='initial'
               >
                 {link.name}
               </motion.button>
