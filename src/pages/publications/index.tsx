@@ -15,6 +15,8 @@ const Publications = ({ publications }: InferGetStaticPropsType<typeof getStatic
   return (
     <motion.div className={styles.container} layout>
       <motion.div className={styles.grid}>
+
+        {/* Card header */}
         <motion.div className={styles.header}>
           <motion.h1
             className={styles.title1}
@@ -32,6 +34,14 @@ const Publications = ({ publications }: InferGetStaticPropsType<typeof getStatic
           >
             Board of Professional Responsibility
           </motion.h2>
+          <motion.h3
+            className={styles.title3}
+            variants={headerVariant}
+            initial='initial'
+            animate='animate'
+          >
+            Recent disciplinary action publications
+          </motion.h3>
         </motion.div>
 
         <motion.div
@@ -59,21 +69,29 @@ const Publications = ({ publications }: InferGetStaticPropsType<typeof getStatic
                       {publication.attorney}
                     </h3>
                     <p className='uk-text-meta uk-margin-remove-top'>
-                      <time>{publication.date}</time>
+                      <time>
+                        {publication.date}
+                      </time>
                     </p>
                   </motion.div>
                 </motion.div>
               </motion.div>
 
               {/* Card body */}
-              <motion.div id={styles.body} className='uk-card-body'>
-                <p className={styles.paragraph}>{publication.title}</p>
+              <motion.div id={styles.body} className='uk-card-body uk-margin-remove'>
+                <p className={styles.paragraph}>
+                  {publication.title}
+                </p>
               </motion.div>
 
               {/* Card footer */}
               <motion.div className='uk-card-footer'>
-                <Link href={publication.link}>
-                  <a className={styles.link} target='_blank' rel='noopener noreferrer'>
+                <Link href={publication.link} passHref>
+                  <a
+                    className={styles.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
                     View publication
                   </a>
                 </Link>
@@ -91,7 +109,9 @@ export const getStaticProps: GetStaticProps = async _context => {
   const res = await fetch(endpoint);
   const publications: IPublication[] = await res.json();
 
-  return { props: { publications } }
+  return {
+    props: { publications }
+  }
 };
 
 export default Publications;

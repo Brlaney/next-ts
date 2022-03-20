@@ -27,8 +27,10 @@ export default function Bars() {
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
         <motion.div className={styles.box}>
-
-          <motion.div className={styles.item} onClick={() => { handleClick(step) }}>
+          <motion.div
+            className={styles.item}
+            onClick={() => { handleClick(step) }}
+          >
             <AnimateSharedLayout>
               {step === 0 && <One />}
               {step === 1 && <Two />}

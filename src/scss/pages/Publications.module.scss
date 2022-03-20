@@ -28,6 +28,11 @@
       }
       .title2 {
         font-size: 2.3rem;
+        margin: 0.2rem 0 0.3rem 0.15rem;
+        text-align: justify;
+      }
+      .title3 {
+        font-size: 1.4rem;
         margin: 0.2rem 0 0.5rem 0.15rem;
         text-align: justify;
       }
@@ -44,13 +49,16 @@
       .card {
         color: #fff;
         background-color: $bg-d;
-        min-width: 750px;
+        width: 100%;
         border-radius: 4px;
-        margin: 0.66rem 0.22rem;
+        margin: 0.55rem 0.22rem;
         border: 1px solid $border-color;
         box-shadow: $base-box-shadow-xs;
         #header {
+          margin: 0.8rem 0 0.5rem 0;
+          padding: 0.5rem 0 0.2rem 1.3rem;
           color: #fff;
+          border-bottom: 1px solid $border-color;
           .card-grid {
             display: flex;
             flex-direction: row;
@@ -71,6 +79,7 @@
           }
         }
         #body {
+          padding: 0.5rem 0 0.5rem 1.75rem;
           .paragraph {
             color: #fff;
           }
