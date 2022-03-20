@@ -5,7 +5,7 @@ import Link from 'next/link';
 import icons from '@/components/icons/Icons';
 import { IPublication } from '@/lib/types';
 import { motion } from 'framer-motion';
-import { headerVariant, boxVariant } from '@/lib/animations/headers';
+import { headerVariant, boxVariant } from '@/lib/animations/pages';
 import styles from '@/styles/pages/Publications.module.scss';
 
 

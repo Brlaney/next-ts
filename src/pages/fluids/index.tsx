@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { formVariant, submitVariant } from '@/lib/animations/forms';
+import {
+  formVariant,
+  submitVariant,
+  eqnVariant
+} from '@/lib/animations/forms';
 import Image from 'next/image';
 import { Re1, Re2 } from '@/lib/utils/reynolds';
 import eqtns from '@/components/icons/Eqtns';
@@ -49,7 +53,12 @@ const Fluids = () => {
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
-        <motion.div className={styles.equations}>
+        <motion.div
+          className={styles.equations}
+          variants={eqnVariant}
+          animate='animate'
+          initial='initial'
+        >
           <Image
             className={styles.eqn}
             width={225}

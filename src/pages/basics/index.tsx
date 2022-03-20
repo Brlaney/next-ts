@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import {
+  headerVariant,
+  boxVariant,
+  btnVariant
+} from '@/lib/animations/pages';
 import styles from '@/styles/pages/Basics.module.scss';
 
 const basics = [
@@ -16,45 +21,32 @@ export default function Basics() {
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
 
+      <motion.div className={styles.header}>
         <motion.h1
-          className={styles.header}
-          animate={{
-            x: 0,
-            opacity: 1,
-            transition: {
-              duration: 0.8,
-              ease: [0.8, 0.1, 0.1, 0.95]
-            }
-          }}
-          initial={{ x: 200, opacity: 0 }}
+          className={styles.title1}
+          variants={headerVariant}
+          animate='animate'
+          initial='initial'
         >
           This is the basics page
-        </motion.h1>
+          </motion.h1>
+        </motion.div>
 
         <motion.div className={styles.box}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: {
-              delay: 0.9,
-              duration: 1.8,
-              ease: [0.2, 0.4, -0.3, 0.95],
-              staggerChildren: 0.45
-            }
-          }}
-          initial={{ y: 150, opacity: 0 }}
+          variants={boxVariant}
+          animate='animate'
+          initial='initial'
         >
 
           {basics.map(link => (
             <Link href={link.link} key={link.id}>
               <motion.button
                 className='uk-button uk-button-primary'
-                whileHover={{
-                  zIndex: 1,
-                  scale: 1.06,
-                  transition: { duration: 0.3, easing: 'easeInOut' }
-                }}
-                whileTap={{ scale: 0.9 }}
+                variants={btnVariant}
+                animate='animate'
+                initial='initial'
+                whileHover='whileHover'
+                whileTap='whileTap'
               >
                 {link.name}
               </motion.button>
