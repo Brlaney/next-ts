@@ -23,7 +23,7 @@ export const boxVariant = {
       delay: 0.9,
       duration: 1.8,
       ease: [0.2, 0.4, -0.3, 0.95],
-      staggerChildren: 0.45
+      staggerChildren: 0.6
     }
   }
 };
@@ -45,6 +45,27 @@ export const btnVariant = {
     transition: {
       duration: 0.3,
       ease: [0.6, -0.05, 0.01, 0.99]
+    }
+  }
+};
+
+export const fadeInUp = {
+  initial: {
+    y: 250,
+    opacity: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.8,
+      ease: [0.2, 0.4, -0.3, 0.95],
+    }
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.4,
+      duration: 2,
+      ease: [0.2, 0.4, -0.3, 0.95],
     }
   }
 };

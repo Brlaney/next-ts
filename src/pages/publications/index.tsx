@@ -5,7 +5,11 @@ import Link from 'next/link';
 import icons from '@/components/icons/Icons';
 import { IPublication } from '@/lib/types';
 import { motion } from 'framer-motion';
-import { headerVariant, boxVariant } from '@/lib/animations/pages';
+import {
+  headerVariant,
+  boxVariant,
+  fadeInUp
+} from '@/lib/animations/pages';
 import styles from '@/styles/pages/Publications.module.scss';
 
 
@@ -51,7 +55,13 @@ const Publications = ({ publications }: InferGetStaticPropsType<typeof getStatic
           animate='animate'
         >
           {bpr.map((publication: IPublication) => (
-            <motion.div key={publication.id} className={styles.card}>
+            <motion.div
+              key={publication.id}
+              className={styles.card}
+              variants={fadeInUp}
+              animate='animate'
+              initial='initial'
+            >
 
               {/* Card header */}
               <motion.div id={styles.header} className='uk-card-header'>
