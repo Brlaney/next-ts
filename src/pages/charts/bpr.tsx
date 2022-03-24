@@ -48,6 +48,7 @@ export const options = {
     legend: {
       position: 'bottom' as const,
     },
+    },
     title: {
       display: true,
       text: 'Disciplinary actions timeline',
