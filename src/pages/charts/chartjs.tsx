@@ -99,7 +99,10 @@ export default function ChartJs() {
           animate='animate'
           initial='initial'
         >
-          <Line options={options} data={data} />
+          <Line
+            options={options}
+            data={data}
+          />
         </motion.div>
 
       </motion.div>
