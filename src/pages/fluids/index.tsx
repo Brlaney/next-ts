@@ -1,24 +1,19 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import {
-  formVariant,
-  submitVariant,
-  eqnVariant
-} from '@/lib/animations/forms';
+import { formVariant, submitVariant } from '@/lib/animations/forms';
 import Image from 'next/image';
 import { Re1, Re2 } from '@/lib/utils/reynolds';
 import eqtns from '@/components/icons/Eqtns';
 import styles from '@/styles/pages/Fluids.module.scss';
 
-
 const Fluids = () => {
-  const [eqnState, setEqnState] = React.useState(0);
-  const [reynolds, setReynolds] = React.useState<number>();
-  const [p, setP] = React.useState<number>();
-  const [u, setU] = React.useState<number>();
-  const [L, setL] = React.useState<number>();
-  const [mu, setMu] = React.useState<number>();
-  const [k, setK] = React.useState<number>();
+  const [eqnState, setEqnState] = useState(0);
+  const [reynolds, setReynolds] = useState<number>();
+  const [p, setP] = useState<number>();
+  const [u, setU] = useState<number>();
+  const [L, setL] = useState<number>();
+  const [mu, setMu] = useState<number>();
+  const [k, setK] = useState<number>();
 
   function flow(Re) {
     if (Re > 4000) {
@@ -49,9 +44,8 @@ const Fluids = () => {
 
   };
 
-
   // Runs everytime reynolds state value changes
-  React.useEffect(() => {
+  useEffect(() => {
 
     // If a value is in reynolds state then console.log
     if (reynolds != undefined) {
@@ -67,36 +61,34 @@ const Fluids = () => {
         {/* Equation display */}
         <motion.div
           className={styles.equations}
-          variants={eqnVariant}
+          variants={formVariant}
           animate='animate'
-          initial='initial'
+          initial='hidden'
         >
 
-          {/* If eqnState == 0 (default) */}
-          {eqnState == 0 && (
-            <>
-              <Image
-                className={styles.eqn}
-                width={225}
-                height={75}
-                src={eqtns[0]}
-              />
-              Equation 1.
-            </>
-          )}
+            {/* If eqnState == 0 (default) */}
+            {eqnState == 0 && (
+              <motion.div variants={formVariant} animate='animate' initial='hidden' className={styles['eqn-container']} layout>
+                <Image
+                  className={styles.eqn}
+                  width={225}
+                  height={75}
+                  src={eqtns[0]}
+                />
+              </motion.div>
+            )}
 
-          {/* If eqnState == 1 */}
-          {eqnState == 1 && (
-            <>
-              <Image
-                className={styles.eqn}
-                width={225}
-                height={75}
-                src={eqtns[1]}
-              />
-              Equation 2.
-            </>
-          )}
+            {/* If eqnState == 1 */}
+            {eqnState == 1 && (
+              <motion.div variants={formVariant} animate='animate' initial='hidden' className={styles['eqn-container']} layout>
+                <Image
+                  className={styles.eqn}
+                  width={225}
+                  height={75}
+                  src={eqtns[1]}
+                />
+              </motion.div>
+            )}
         </motion.div>
 
         {/* Form - Calculate Reynolds Number, Re */}
@@ -125,7 +117,7 @@ const Fluids = () => {
                 type='radio'
                 name='eqn1'
                 onClick={() => setEqnState(0)}
-              /> Eqn. 1
+              /> Equation 1
             </label>
             <label>
               <input
@@ -136,7 +128,7 @@ const Fluids = () => {
                 type='radio'
                 name='eqn2'
                 onClick={() => setEqnState(1)}
-              /> Eqn. 2
+              /> Equation 2
             </label>
           </motion.div>
 
@@ -241,18 +233,19 @@ const Fluids = () => {
             </motion.div>
           )}
 
-          {/* Submit button */}
-          <motion.button
-            className='uk-button'
-            type='submit'
-            variants={submitVariant}
-            whileHover='whileHover'
-            animate='animate'
-            whileTap='whileTap'
-            initial='initial'
-          >
-            Calculate Reynolds Number
-          </motion.button>
+          <motion.div className={styles['form-button']}>
+            <motion.button
+              className='uk-button'
+              type='submit'
+              variants={submitVariant}
+              whileHover='whileHover'
+              animate='animate'
+              whileTap='whileTap'
+              initial='initial'
+            >
+              Calculate Reynolds Number
+            </motion.button>
+          </motion.div>
         </motion.form>
       </motion.div>
     </motion.div>

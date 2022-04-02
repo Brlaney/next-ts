@@ -27,22 +27,25 @@
       border: 1px solid $border-color;
       border-radius: $border-radius-sm;
       box-shadow: $base-box-shadow-xs;
-      .eqn {
-        padding: 0;
-        margin: 0;
+      .equation-container {
+        .eqn {
+          padding: 0;
+          margin: 0;
+        }
       }
     }
     .form {
       width: 700px;
+      height: 450px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
       font-size: 1rem;
       border: 1px solid $border-color;
       border-radius: $border-radius-sm;
-      padding: 2.5rem 0.88rem 0.6rem 0.88rem;
+      padding: 1.44rem 0.88rem 0 0.88rem;
       box-shadow: $base-box-shadow-sm;
       .inputs {
         display: flex;
@@ -83,12 +86,20 @@
           border: 1px solid $border-color;
         }
       }
-      button {
-        color: #fff;
-        width: 90%;
-        margin: 3.3rem 0;
-        border-radius: $border-radius-sm;
-        background-color: $secondary;
+      .form-button {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        button {
+          color: #fff;
+          width: 60%;
+          height: 50px;
+          margin: 2rem 0;
+          border-radius: $border-radius-sm;
+          background-color: $secondary;
+        }
       }
     }
   }

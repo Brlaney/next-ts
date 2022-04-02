@@ -5,9 +5,9 @@ const links = [
   { id: 1, name: 'Basic Pages', link: '/basics' },
   { id: 2, name: 'Carousel', link: '/carousel' },
   { id: 3, name: 'Bars', link: '/bars' },
-  { id: 4, name: 'Re', link: '/fluids' },
+  { id: 4, name: 'Fluids', link: '/fluids' },
   { id: 5, name: 'Charts', link: '/charts' },
-  { id: 6, name: 'BPR Publications', link: '/publications' },
+  { id: 6, name: 'Publications', link: '/publications' },
 ];
 
 export default function Navbar() {
