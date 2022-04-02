@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&family=Raleway:wght@300;400;500;600&family=Source+Sans+Pro:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&family=Raleway:wght@300;400;500;600&family=Noto+Sans+Math&display=swap');
 
 // Palette
 $primary: #3DC2A3;
@@ -33,7 +32,6 @@ $bg-df-300: rgba(164, 171, 178, 0.6);
 $bg-df-500: rgba(124, 131, 138, 0.6);
 $bg-df-700: rgba(87, 93, 100, 0.6);
 $bg-df-900: rgba(52, 58, 64, 0.85);
-
 
 // Box-shadows
 $base-box-shadow-xs: rgba(0, 0, 0, 0.06) 0px 2px 1px;
@@ -70,7 +68,6 @@ $row-padding: 0 0.88rem;
 $row-padding-md: 0 1.32rem;
 $row-padding-lg: 0 1.76rem;
 
-
 // Primary, secondary, and tertiary font-family
 $primary-font: 'Rubik',
 -apple-system,
@@ -98,7 +95,7 @@ BlinkMacSystemFont,
 'Helvetica Neue',
 sans-serif;
 
-$tertiary-font: 'Source Sans Pro',
+$tertiary-font: 'Noto Sans Math',
 -apple-system,
 BlinkMacSystemFont,
 'Segoe UI',
