@@ -44,7 +44,6 @@ const Fluids = () => {
       let re = await Re2(u, L, k);
       return setReynolds(re);
     }
-
   };
 
   useEffect(() => {
@@ -110,7 +109,6 @@ const Fluids = () => {
           animate='animate'
           initial='initial'
         >
-
 
           {/* Velocity input */}
           <motion.div className={styles.inputs}>
