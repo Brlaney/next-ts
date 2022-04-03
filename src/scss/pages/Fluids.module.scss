@@ -16,7 +16,7 @@
     justify-content: center;
     .equations {
       width: 700px;
-      height: 140px;
+      height: 180px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -27,10 +27,39 @@
       border: 1px solid $border-color;
       border-radius: $border-radius-sm;
       box-shadow: $base-box-shadow-xs;
+      .eqnts {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+      }
       .equation-container {
         .eqn {
           padding: 0;
           margin: 0;
+        }
+      }
+      div.button-row {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: stretch;
+        button.btnActive, button.btnNot {
+          padding: 0.5rem 1rem;
+          width: 48%;
+          color: $white;
+          background-color: $primary;
+          border: 0;
+          border-radius: $border-radius-sm;
+          margin: 0.2rem 0 0 0;
+        }
+        button.btnNot {
+          background-color: $bg-d-100;
+        }
+        button:hover {
+          cursor: pointer;
         }
       }
     }

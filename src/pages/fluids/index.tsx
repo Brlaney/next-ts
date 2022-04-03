@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { formVariant, submitVariant } from '@/lib/animations/forms';
-import Image from 'next/image';
 import { Re1, Re2 } from '@/lib/utils/reynolds';
-import eqtns from '@/components/icons/Eqtns';
 import styles from '@/styles/pages/Fluids.module.scss';
+import 'katex/dist/katex.min.css';
+import TeX from '@matejmazur/react-katex'
 
 const Fluids = () => {
   const [eqnState, setEqnState] = useState(0);
@@ -14,6 +14,9 @@ const Fluids = () => {
   const [L, setL] = useState<number>();
   const [mu, setMu] = useState<number>();
   const [k, setK] = useState<number>();
+
+  const eqn1 = `Re(\\rho, \\ u, \\ L, \\ \\mu) = \\frac{\\rho \\ u \\ L}{\\mu}`;
+  const eqn2 = `Re(u, \\ L, \\ v) = \\frac{u \\ L}{v}`;
 
   function flow(Re) {
     if (Re > 4000) {
@@ -35,18 +38,16 @@ const Fluids = () => {
     e.preventDefault();
 
     if (eqnState == 0) {
-      const re = await Re1(p, u, L, mu);
-      setReynolds(re);
+      let re = await Re1(p, u, L, mu);
+      return setReynolds(re);
     } else {
-      const re = await Re2(u, L, k);
-      setReynolds(re);
+      let re = await Re2(u, L, k);
+      return setReynolds(re);
     }
 
   };
 
-  // Runs everytime reynolds state value changes
   useEffect(() => {
-
     // If a value is in reynolds state then console.log
     if (reynolds != undefined) {
       console.log('Current reynolds number: ' + reynolds);
@@ -66,29 +67,39 @@ const Fluids = () => {
           initial='hidden'
         >
 
-            {/* If eqnState == 0 (default) */}
-            {eqnState == 0 && (
-              <motion.div variants={formVariant} animate='animate' initial='hidden' className={styles['eqn-container']} layout>
-                <Image
-                  className={styles.eqn}
-                  width={225}
-                  height={75}
-                  src={eqtns[0]}
-                />
-              </motion.div>
-            )}
+          {eqnState == 0 && (
+            <div className={styles.eqnts}>
+              <TeX math={eqn1} />
+            </div>
+          )}
 
-            {/* If eqnState == 1 */}
-            {eqnState == 1 && (
-              <motion.div variants={formVariant} animate='animate' initial='hidden' className={styles['eqn-container']} layout>
-                <Image
-                  className={styles.eqn}
-                  width={225}
-                  height={75}
-                  src={eqtns[1]}
-                />
-              </motion.div>
-            )}
+          {eqnState == 1 && (
+            <div className={styles.eqnts}>
+              <TeX math={eqn2} />
+            </div>
+          )}
+
+          <div className={styles['button-row']}>
+            <button
+              id='eqn1'
+              className={eqnState == 0
+                ? `${styles.btnActive}`
+                : `${styles.btnNot}`}
+              onClick={() => setEqnState(0)}
+            > Equation 1
+            </button>
+
+            <button
+              id='eqn2'
+              className={eqnState == 1
+                ? `${styles.btnActive}`
+                : `${styles.btnNot}`}
+              name='eqn2'
+              onClick={() => setEqnState(1)}
+            > Equation 2
+            </button>
+          </div>
+
         </motion.div>
 
         {/* Form - Calculate Reynolds Number, Re */}
@@ -100,58 +111,6 @@ const Fluids = () => {
           initial='initial'
         >
 
-          {/* Equation 1 or 2 radio dial */}
-          <motion.div className={styles.inputs}>
-            <label
-              className={styles['radio-label']}
-              htmlFor='form-horizontal-text'
-            >
-              Calculate with equation 1 or 2
-            </label>
-            <label>
-              <input
-                id={eqnState == 0
-                  ? `${styles.checked}`
-                  : `${styles.radio}`}
-                className='uk-radio'
-                type='radio'
-                name='eqn1'
-                onClick={() => setEqnState(0)}
-              /> Equation 1
-            </label>
-            <label>
-              <input
-                id={eqnState == 1
-                  ? `${styles.checked}`
-                  : `${styles.radio}`}
-                className='uk-radio'
-                type='radio'
-                name='eqn2'
-                onClick={() => setEqnState(1)}
-              /> Equation 2
-            </label>
-          </motion.div>
-
-          {/* Density input */}
-          {eqnState == 0 && (
-            <motion.div className={styles.inputs}>
-              <label
-                className={styles['input-label']}
-                htmlFor='form-horizontal-text'
-              >
-                Density, p (pcf)
-              </label>
-              <input
-                className='uk-input'
-                placeholder='Density, p'
-                type='number'
-                step='any'
-                name='p'
-                id='density'
-                onChange={(e) => setP(parseInt(e.target.value))}
-              />
-            </motion.div>
-          )}
 
           {/* Velocity input */}
           <motion.div className={styles.inputs}>
@@ -190,6 +149,27 @@ const Fluids = () => {
               onChange={(e) => setL(parseInt(e.target.value))}
             />
           </motion.div>
+
+          {/* Density input */}
+          {eqnState == 0 && (
+            <motion.div className={styles.inputs}>
+              <label
+                className={styles['input-label']}
+                htmlFor='form-horizontal-text'
+              >
+                Density, p (pcf)
+              </label>
+              <input
+                className='uk-input'
+                placeholder='Density, p'
+                type='number'
+                step='any'
+                name='p'
+                id='density'
+                onChange={(e) => setP(parseInt(e.target.value))}
+              />
+            </motion.div>
+          )}
 
           {/* Dynamic viscosity input */}
           {eqnState == 0 && (
