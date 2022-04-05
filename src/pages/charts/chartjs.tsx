@@ -49,7 +49,6 @@ export const options = {
     title: {
       display: true,
       text: 'US Tornado Data',
-      align: 'start',
     },
   },
 };
