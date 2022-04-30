@@ -1,19 +1,34 @@
-import React from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Modal from '@/components/Modal';
 import styles from '@/styles/pages/Home.module.scss';
 
-// const pages = [
-//   { id: 1, name: 'The basic website', link: '/basics' },
-//   { id: 2, name: 'Charts', link: '/charts' },
-//   { id: 3, name: 'Fluid hydraulics', link: '/fluids' },
-//   { id: 4, name: 'Hydraulics chart (moody)', link: '/charts/reynolds' },
-// ];
+const Home = ({props}) => {
+  const [modalOpen, setModalOpen] = useState(false);
 
-const Home = () => {
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
+
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
-        This is the homepage.
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className={styles['save-button']}
+          onClick={() => (modalOpen ? close() : open())}
+        >
+          Launch Modal
+        </motion.button>
+
+        {/* Conditionally displays modal if state=True */}
+        {modalOpen && (
+          <Modal
+            modalOpen={modalOpen}
+            handleClose={close}
+            {...props}
+          />
+        )}
       </motion.div>
     </motion.div>
   )
