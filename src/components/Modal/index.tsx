@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Backdrop from '../Backdrop';
 import styles from '@/styles/components/Modal.module.scss';
+import { MouseEventHandler } from 'react';
 
 const dropIn = {
   hidden: {
@@ -23,11 +24,11 @@ const dropIn = {
   },
 };
 
-const Modal = ({ handleClose, text }) => {
+const Modal: React.FC = (text: string, handleClose: MouseEventHandler<HTMLElement>) => {
   return (
     <Backdrop onClick={handleClose}>
       <motion.div
-        className={styles['modal orange-gradient']}
+        className={styles.modal}
         onClick={(e) => e.stopPropagation()}
         variants={dropIn}
         initial='hidden'
@@ -35,7 +36,12 @@ const Modal = ({ handleClose, text }) => {
         exit='exit'
       >
         <p>{text}</p>
-        <button onClick={handleClose}>Close</button>
+        <button
+          className='uk-button uk-button-primary'
+          onClick={handleClose}
+        >
+          Close
+        </button>
       </motion.div>
     </Backdrop>
   )

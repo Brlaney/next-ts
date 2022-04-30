@@ -1,22 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Modal from '@/components/Modal';
 import styles from '@/styles/pages/Home.module.scss';
 
-const Home = ({ props }) => {
+export default function Home({ props }) {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
+  useEffect(() => {
+    if (modalOpen == true) setModalOpen(false)
+    else setModalOpen(true);
+  }, [modalOpen])
 
   return (
     <motion.div className={styles.container}>
       <motion.div className={styles.grid}>
         <motion.button
+          // className='uk-button uk-button-primary'
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className={styles['save-button']}
-          onClick={() => (modalOpen ? close() : open())}
+          onClick={() => { setModalOpen(!modalOpen) }}
         >
           Launch Modal
         </motion.button>
@@ -27,6 +30,7 @@ const Home = ({ props }) => {
             <Modal
               modalOpen={modalOpen}
               handleClose={close}
+              text='hello there'
               {...props}
             />
           )}
@@ -35,5 +39,3 @@ const Home = ({ props }) => {
     </motion.div>
   )
 };
-
-export default Home;
