@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Modal from '@/components/Modal';
 import styles from '@/styles/pages/Home.module.scss';
 
-const Home = ({props}) => {
+const Home = ({ props }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const close = () => setModalOpen(false);
@@ -22,13 +22,15 @@ const Home = ({props}) => {
         </motion.button>
 
         {/* Conditionally displays modal if state=True */}
-        {modalOpen && (
-          <Modal
-            modalOpen={modalOpen}
-            handleClose={close}
-            {...props}
-          />
-        )}
+        <AnimatePresence>
+          {modalOpen && (
+            <Modal
+              modalOpen={modalOpen}
+              handleClose={close}
+              {...props}
+            />
+          )}
+        </AnimatePresence>
       </motion.div>
     </motion.div>
   )
