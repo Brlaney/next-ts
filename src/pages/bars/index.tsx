@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { motion, AnimateSharedLayout } from 'framer-motion';
-import One from '@/components/frames/One';
-import Two from '@/components/frames/Two';
-import Three from '@/components/frames/Three';
-import Four from '@/components/frames/Four';
-import Five from '@/components/frames/Five';
-import Six from '@/components/frames/Six';
-import Seven from '@/components/frames/Seven';
+import { motion } from 'framer-motion';
+import One from '@/components/Frames/One';
+import Two from '@/components/Frames/Two';
+import Three from '@/components/Frames/Three';
+import Four from '@/components/Frames/Four';
+import Five from '@/components/Frames/Five';
+import Six from '@/components/Frames/Six';
+import Seven from '@/components/Frames/Seven';
 import styles from '@/styles/pages/Bars.module.scss';
 
 
@@ -31,15 +31,13 @@ export default function Bars() {
             className={styles.item}
             onClick={() => { handleClick(step) }}
           >
-            <AnimateSharedLayout>
-              {step === 0 && <One />}
-              {step === 1 && <Two />}
-              {step === 2 && <Three />}
-              {step === 3 && <Four />}
-              {step === 4 && <Five />}
-              {step === 5 && <Six />}
-              {step === 6 && <Seven />}
-            </AnimateSharedLayout>
+            {step === 0 && <One />}
+            {step === 1 && <Two />}
+            {step === 2 && <Three />}
+            {step === 3 && <Four />}
+            {step === 4 && <Five />}
+            {step === 5 && <Six />}
+            {step === 6 && <Seven />}
           </motion.div>
         </motion.div>
       </motion.div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import icons from '@/components/icons/Icons';
+import icons from '@/components/Icons/Icons';
 import { IPublication } from '@/lib/types';
 import { motion } from 'framer-motion';
 import {

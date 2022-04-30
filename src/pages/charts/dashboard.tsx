@@ -36,7 +36,7 @@ export const options = {
     title: {
       display: true,
       text: 'Putnam County Tennessee',
-      align: 'start',
+      align: 'start' as const,
     },
   },
 };

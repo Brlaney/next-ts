@@ -7,7 +7,6 @@ import '@/styles/globals.scss';
 
 // import 'uikit/dist/js/uikit.js';
 
-
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AnimatePresence>

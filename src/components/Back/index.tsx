@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { containerVariant, backBtnVariant } from '@/lib/animations/back-btn';
-import BackArrow from './icons/BackArrow';
+import BackArrow from '../Icons/BackArrow';
 import Link from 'next/link';
 import styles from '@/styles/components/Buttons.module.scss';
 

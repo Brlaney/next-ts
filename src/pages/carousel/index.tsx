@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import images from '@/components/images/Images';
+import images from '@/components/Images/Images';
 import Image from 'next/image';
 import styles from '@/styles/pages/Carousel.module.scss';
 // import useWindowSize from '@/lib/utils/viewport';

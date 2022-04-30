@@ -1,8 +1,7 @@
 ﻿import Head from 'next/head';
-import Navbar from './Navbar';
+import Navbar from '../Navbar';
 import seo from '@/lib/data/seo';
 import styles from '@/styles/components/Layout.module.scss';
-
 
 const Layout = ({ children }) => {
   return (
