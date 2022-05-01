@@ -97,6 +97,7 @@ export default function ChartJs() {
           variants={chartVariant}
           animate='animate'
           initial='initial'
+          exit='exit'
         >
           <Line
             options={options}

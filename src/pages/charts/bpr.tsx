@@ -99,6 +99,7 @@ export default function Bpr({ ...props }) {
           variants={chartVariant}
           animate='animate'
           initial='initial'
+          exit='exit'
         >
           <Bar
             options={options}

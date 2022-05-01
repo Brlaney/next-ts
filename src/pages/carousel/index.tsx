@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import images from '@/components/images/Images';
+import { fadeInUp } from '@/lib/animations/pages';
+import images from '@/components/Images';
 import Image from 'next/image';
 import styles from '@/styles/pages/Carousel.module.scss';
 // import useWindowSize from '@/lib/utils/viewport';
@@ -29,7 +30,15 @@ const Carousel = () => {
           {/* Iterate over your array of images */}
           {images.map((image, i: number) => {
             return (
-              <motion.div className={styles.item} key={i}>
+              <motion.div
+                className={styles.item}
+                variants={fadeInUp}
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                key={i}
+                layout
+              >
                 <Image
                   width={700}
                   height={466.66}

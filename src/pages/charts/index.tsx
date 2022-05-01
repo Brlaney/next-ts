@@ -26,6 +26,7 @@ const Charts = () => {
                 animate='animate'
                 whileTap='whileTap'
                 initial='initial'
+                exit='exit'
               >
                 {link.name}
               </motion.button>

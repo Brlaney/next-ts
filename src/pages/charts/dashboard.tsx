@@ -36,7 +36,7 @@ export const options = {
     title: {
       display: true,
       text: 'Putnam County Tennessee',
-      align: 'start',
+      align: 'start' as const,
     },
   },
 };
@@ -78,6 +78,7 @@ export default function Dashboard({ ...props }) {
           variants={chartVariant}
           animate='animate'
           initial='initial'
+          exit='exit'
         >
           <Pie
             options={options}
