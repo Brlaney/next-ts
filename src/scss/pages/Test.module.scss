@@ -1,0 +1,33 @@
+@import '../theme/theme';
+@import '../mixins/width.scss';
+
+.container {
+  height: 100%;
+  width: 100vw;
+  color: $bg-d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .grid {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .save-button {
+      width: 120px;
+      padding: 0.33rem 0.66rem;
+      color: white;
+      background-color: $secondary;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      button {
+        width: 260px;
+        margin: 0.7rem 0;
+      }
+    }
+  }
+}

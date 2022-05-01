@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
-import Backdrop from '../Backdrop';
 import styles from '@/styles/components/Modal.module.scss';
-import { MouseEventHandler } from 'react';
 
 const dropIn = {
   hidden: {
@@ -24,9 +22,16 @@ const dropIn = {
   },
 };
 
-const Modal: React.FC = (text: string, handleClose: MouseEventHandler<HTMLElement>) => {
+const Modal = (onClick: () => void, handleClose: () => void, text: string) => {
   return (
-    <Backdrop onClick={handleClose}>
+    <motion.div
+      className={styles.backdrop}
+      onClick={onClick}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      layout
+    >
       <motion.div
         className={styles.modal}
         onClick={(e) => e.stopPropagation()}
@@ -36,14 +41,11 @@ const Modal: React.FC = (text: string, handleClose: MouseEventHandler<HTMLElemen
         exit='exit'
       >
         <p>{text}</p>
-        <button
-          className='uk-button uk-button-primary'
-          onClick={handleClose}
-        >
+        <button className='uk-button uk-button-primary' onClick={handleClose}>
           Close
         </button>
       </motion.div>
-    </Backdrop>
+    </motion.div>
   )
 };
 
