@@ -14,6 +14,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import Back from '@/components/Back';
+import useWindowSize from '@/lib/utils/viewport';
 import styles from '@/styles/pages/Charts.module.scss';
 
 ChartJS.register(
@@ -27,8 +28,11 @@ ChartJS.register(
   Legend
 );
 
+const size = useWindowSize();
+
 export const options = {
   responsive: true,
+  width: size.width - 100,
   radius: 3,
   hoverRadius: 10,
   hitRadius: 30,

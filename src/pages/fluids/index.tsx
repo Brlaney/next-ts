@@ -71,7 +71,6 @@ const Fluids = () => {
               <TeX math={eqn1} />
             </div>
           )}
-
           {eqnState == 1 && (
             <div className={styles.eqnts}>
               <TeX math={eqn2} />
@@ -87,7 +86,6 @@ const Fluids = () => {
               onClick={() => setEqnState(0)}
             > Equation 1
             </button>
-
             <button
               id='eqn2'
               className={eqnState == 1
@@ -98,7 +96,6 @@ const Fluids = () => {
             > Equation 2
             </button>
           </div>
-
         </motion.div>
 
         {/* Form - Calculate Reynolds Number, Re */}

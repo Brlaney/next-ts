@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export default function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: Number || undefined,
-    height: Number || undefined,
-  });
+  const [windowSize, setWindowSize] = useState({width: 0, height: 0});
 
   useEffect(() => {
     // only execute all the code below in client side
@@ -12,8 +9,8 @@ export default function useWindowSize() {
 
       function handleResize() {
         setWindowSize({
-          width: window.innerWidth,
-          height: window.innerHeight,
+          width: Number(window.innerWidth),
+          height: Number(window.innerHeight),
         });
       }
 
