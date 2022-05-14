@@ -102,10 +102,10 @@
         .inputs-v {
           display: flex;
           width: 100%;
-          height: 100%;
           flex-direction: row;
           align-items: flex-start;
           justify-content: space-between;
+          margin-bottom: 0.5rem;
           .input-label {
             margin: 1rem;
             text-align: justify;

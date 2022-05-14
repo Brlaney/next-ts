@@ -63,6 +63,7 @@ export const variant4 = {
       type: 'spring',
       bounce: 0.25,
       mass: 0.5,
+      restDelta: 0.2
     }
   },
   exit: {
@@ -70,10 +71,12 @@ export const variant4 = {
     y: 0,
     opacity: 0,
     transition: {
-      duration: 0.66,
+      duration: 0.5,
       ease: easing1,
       type: 'spring',
       bounce: 0.25,
+      mass: 0.5,
+      restDelta: 0.2
     }
   }
 };
