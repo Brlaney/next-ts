@@ -1,21 +1,5 @@
 // reynolds\index.ts
 
-// Function (1.) Reynolds number using density (p) and dynamic viscosity (mu)
-export function Re1(p, u, L, mu) {
-  const initial = p * u * L / mu;
-  const Re = initial.toFixed(0); // Round to n decimal places (where n==0)
-
-  return parseInt(Re);
-};
-
-// Function (2.) Reynolds number using only kinematic viscosity (v)
-export function Re2(u, L, v) {
-  const initial = u * L / v;
-  const Re = initial.toFixed(6); // Rounded to 5 decimal places
-
-  return parseInt(Re);
-};
-
 /*
   Re = ρ u L / μ              (eqn 1)
      = ρ u2 / (μ u / L) 
@@ -33,3 +17,19 @@ export function Re2(u, L, v) {
   transient - when 2300 < Re < 4000
   turbulent - when Re > 4000
 */
+
+// Function (1.) Reynolds number using density (p) and dynamic viscosity (mu)
+export function Re1(p, u, L, mu) {
+  const initial: number = p * u * L / mu;
+  const Re: number = Math.round(initial); // Round to n decimal places (where n==0)
+
+  return Re;
+};
+
+// Function (2.) Reynolds number using only kinematic viscosity (v)
+export function Re2(u, L, v) {
+  const initial: number = u * L / v;
+  const Re: number = Math.round(initial); // Rounded to 5 decimal places
+
+  return Re;
+};

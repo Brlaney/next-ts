@@ -66,55 +66,58 @@
     }
     .form {
       width: 700px;
-      height: 450px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      height: 400px;
       text-align: center;
       font-size: 1rem;
       border: 1px solid $border-color;
       border-radius: $border-radius-sm;
       padding: 1.44rem 0.88rem 0 0.88rem;
       box-shadow: $base-box-shadow-sm;
-      z-index: 1;
-      .inputs {
+      .input-container {
+        height: 100%;
+        width: 100%;
         display: flex;
-        width: 90%;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        .input-label {
-          margin: 1rem;
-          text-align: justify;
-          font-weight: bold;
+        justify-content: flex-start;
+        .inputs {
+          display: flex;
+          width: 100%;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          .input-label {
+            margin: 1rem;
+            text-align: justify;
+            font-weight: bold;
+          }
+          input {
+            width: 300px;
+            margin: $col-margin-sm;
+            background-color: #fff;
+            z-index: 1;
+            box-shadow: $base-box-shadow-xs;
+          }
         }
-        .radio-label {
-          margin: 1rem;
-          text-align: justify;
-          font-weight: bold;
-        }
-        input {
-          width: 300px;
-          margin: $col-margin-sm;
-          background-color: #fff;
-          z-index: 1;
-          box-shadow: $base-box-shadow-xs;
-        }
-        #radio {
-          width: 20px;
-          height: 20px;
-          margin: 0.28rem 0.4rem 0.44rem 0;
-          z-index: 1;
-          border: 1px solid $border-color;
-        }
-        #checked {
-          background-color: $secondary;
-          width: 20px;
-          height: 20px;
-          margin: 0.28rem 0.4rem 0.44rem 0;
-          z-index: 1;
-          border: 1px solid $border-color;
+        .inputs-v {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+          .input-label {
+            margin: 1rem;
+            text-align: justify;
+            font-weight: bold;
+          }
+          input {
+            width: 300px;
+            margin: $col-margin-sm;
+            background-color: #fff;
+            z-index: 1;
+            box-shadow: $base-box-shadow-xs;
+          }
         }
       }
       .form-button {
@@ -123,11 +126,12 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        align-self: flex-end;
         button {
           color: #fff;
-          width: 60%;
-          height: 50px;
-          margin: 2rem 0;
+          width: 100%;
+          height: 44px;
+          margin: 0.5rem 0;
           border-radius: $border-radius-sm;
           background-color: $secondary;
         }
