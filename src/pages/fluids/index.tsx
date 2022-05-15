@@ -60,9 +60,6 @@ const Fluids = () => {
       console.log('Reynolds number: ' + reynolds);
       console.log('Flow type: ' + flow(reynolds));
     } else { console.log("An error occurred.") }
-    // if (eqnState == 1) {
-    // } else if (eqnState == 0) {
-    // }
   }, [reynolds, eqnState]);
 
   return (
