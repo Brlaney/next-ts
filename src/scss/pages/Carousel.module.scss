@@ -15,9 +15,10 @@
     overflow: hidden;
     box-shadow: $base-box-shadow-lg;
     background: $bg-d-900;
-    .innerCarousel {
-      display: flex;
-      background: $bg-d-900;
+    min-width: 0;
+    display: flex;
+    // background: $bg-d-900;
+    // .innerCarousel {
       .item {
         width: 700px;
         margin: 3.2rem 0.5rem;
@@ -25,6 +26,6 @@
       .item Img {
         pointer-events: none;
       }
-    }
+    // }
   }
 }

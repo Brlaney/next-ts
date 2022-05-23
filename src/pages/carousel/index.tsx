@@ -1,30 +1,47 @@
-import * as React from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp } from '@/lib/animations/pages';
 import images from '@/components/Images';
 import Image from 'next/image';
 import styles from '@/styles/pages/Carousel.module.scss';
-// import useWindowSize from '@/lib/utils/viewport';
+import useWindowSize from '@/lib/utils/viewport';
 
-const Carousel = () => {
+export default function Carousel() {
   // Display screen width/height:
-  // const size = useWindowSize();
+  const size = useWindowSize();
+  const imgW = 700;
+  const imgH = 467;
+  const fixedOffset = 272;
+  const fixedImg = 11900;
 
-  const [width] = React.useState(10252);
+  // Define reference to carousel
+  const carousel = useRef<HTMLDivElement>(null);
+
+  // const [width, setWidth] = useState(10252);
+  const [width, setWidth] = useState(10252);
+  const [leftScroll, setLeftScroll] = useState<number>();
+
   // const [offsetWidth, setOffsetWidth] = useState(1920); // Chrome/Firefox
   // const [offsetWidth, setOffsetWidth] = useState(1872); // Edge
   // const [offsetWidth, setOffsetWidth] = useState(size.width);
 
-  // Define reference to carousel
-  const carousel = React.useRef<HTMLDivElement>(null);
-  
+  useEffect(() => {
+    setLeftScroll(fixedImg - size.width + fixedOffset);
+  }, [leftScroll, size.width, size.height]);
+
   return (
     <motion.div className={styles.container}>
-      <motion.div ref={carousel} className={styles.carousel}>
+      <motion.div>
         <motion.div
-          drag='x'
-          dragConstraints={{ right: 0, left: -width }}
-          className={styles.innerCarousel}
+          ref={carousel}
+          className={styles.carousel}
+          drag={'x'}
+          dragConstraints={{
+            right: 0,
+            left: -leftScroll
+          }}
+          // className={styles.innerCarousel}
+          draggable={true}
         >
 
           {/* Iterate over your array of images */}
@@ -40,10 +57,10 @@ const Carousel = () => {
                 layout
               >
                 <Image
-                  width={700}
-                  height={466.66}
+                  width={imgW}
+                  height={imgH}
                   src={image}
-                  alt=''
+                  alt='carousel image'
                 />
               </motion.div>
             )
@@ -53,5 +70,3 @@ const Carousel = () => {
     </motion.div>
   )
 };
-
-export default Carousel;
