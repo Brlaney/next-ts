@@ -17,15 +17,12 @@
     background: $bg-d-900;
     min-width: 0;
     display: flex;
-    // background: $bg-d-900;
-    // .innerCarousel {
-      .item {
-        width: 700px;
-        margin: 3.2rem 0.5rem;
-      }
-      .item Img {
-        pointer-events: none;
-      }
-    // }
+    .item {
+      width: 700px;
+      margin: 3.2rem 0.5rem;
+    }
+    .item Img {
+      pointer-events: none;
+    }
   }
 }

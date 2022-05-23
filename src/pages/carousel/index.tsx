@@ -7,27 +7,34 @@ import styles from '@/styles/pages/Carousel.module.scss';
 import useWindowSize from '@/lib/utils/viewport';
 
 export default function Carousel() {
-  // Display screen width/height:
-  const size = useWindowSize();
   const imgW = 700;
   const imgH = 467;
   const fixedOffset = 272;
   const fixedImg = 11900;
-
+  
   // Define reference to carousel
   const carousel = useRef<HTMLDivElement>(null);
-
+  
   // const [width, setWidth] = useState(10252);
   const [width, setWidth] = useState(10252);
   const [leftScroll, setLeftScroll] = useState<number>();
-
+  
   // const [offsetWidth, setOffsetWidth] = useState(1920); // Chrome/Firefox
   // const [offsetWidth, setOffsetWidth] = useState(1872); // Edge
   // const [offsetWidth, setOffsetWidth] = useState(size.width);
+  
+  // Display screen width/height:
+  const size = useWindowSize();
 
+  const [vpWidth, setVpWidth] = useState<number>(0);
+  const [vpHeight, setVpHeight] = useState<number>(0);
+  
   useEffect(() => {
+    setVpWidth(size.width);
+    setVpHeight(size.height);
+
     setLeftScroll(fixedImg - size.width + fixedOffset);
-  }, [leftScroll, size.width, size.height]);
+  }, [leftScroll, vpWidth, vpHeight]);
 
   return (
     <motion.div className={styles.container}>
@@ -40,7 +47,6 @@ export default function Carousel() {
             right: 0,
             left: -leftScroll
           }}
-          // className={styles.innerCarousel}
           draggable={true}
         >
 
