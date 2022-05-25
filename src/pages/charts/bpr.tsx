@@ -28,11 +28,9 @@ ChartJS.register(
   Legend
 );
 
-const size = useWindowSize();
-
 export const options = {
   responsive: true,
-  width: size.width - 100,
+  width: 800,
   radius: 3,
   hoverRadius: 10,
   hitRadius: 30,
@@ -92,6 +90,7 @@ const data = {
 
 export default function Bpr({ ...props }) {
   const endpoint = '/charts';
+  const size = useWindowSize();
   
   return (
     <motion.div className={styles.container}>

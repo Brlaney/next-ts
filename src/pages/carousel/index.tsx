@@ -4,13 +4,36 @@ import { fadeInUp } from '@/lib/animations/pages';
 import images from '@/components/Images';
 import Image from 'next/image';
 import styles from '@/styles/pages/Carousel.module.scss';
-import useWindowSize from '@/lib/utils/viewport';
+// import useWindowSize from '@/lib/utils/viewport';
 
 export default function Carousel() {
   const imgW = 700;
   const imgH = 467;
   const fixedOffset = 272;
   const fixedImg = 11900;
+
+  function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({width: 0, height: 0});
+  
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+  
+        function handleResize() {
+          setWindowSize({
+            width: Number(window.innerWidth),
+            height: Number(window.innerHeight),
+          });
+        }
+  
+        window.addEventListener('resize', handleResize);
+        handleResize();
+  
+        return () => window.removeEventListener('resize', handleResize);
+      }
+    }, []);
+    
+    return windowSize;
+  };
   
   // Define reference to carousel
   const carousel = useRef<HTMLDivElement>(null);
@@ -34,7 +57,7 @@ export default function Carousel() {
     setVpHeight(size.height);
 
     setLeftScroll(fixedImg - size.width + fixedOffset);
-  }, [leftScroll, vpWidth, vpHeight]);
+  }, [size, leftScroll, vpWidth, vpHeight]);
 
   return (
     <motion.div className={styles.container}>
