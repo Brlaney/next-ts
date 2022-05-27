@@ -9,6 +9,8 @@ const links = [
   { id: 2, name: 'BPR Publications', link: '/charts/bpr' },
   { id: 3, name: 'Moody Diagram', link: '/charts/moody' },
   { id: 4, name: 'Dashboard', link: '/charts/dashboard' },
+  { id: 5, name: 'Mass Shootings in the US', link: '/charts/mass-shootings' },
+  { id: 6, name: 'Mass Shootings in the US by Year', link: '/charts/mass-shootings/victims' },
 ];
 
 const Charts = () => {
