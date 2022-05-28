@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { motion } from 'framer-motion';
 import { chartVariant } from '@/lib/animations/charts';
 import {
@@ -14,6 +13,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import Back from '@/components/Back';
+import { labels, occurences, totals } from '@/lib/data/mass-shootings';
 import styles from '@/styles/pages/Charts.module.scss';
 
 ChartJS.register(
@@ -58,16 +58,12 @@ export const options = {
 
 let delayed;
 
-const labels = ['1982', '1984', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'
-];
-
 const data = {
   labels,
   datasets: [
     {
       label: 'Occurences by Year',
-      data: [1, 2, 1, 1, 1, 2, 1, 3, 2, 4, 1, 1, 1, 2, 3, 5, 1, 1, 1, 1, 2, 3, 4, 3, 4, 1, 3, 7, 5, 4, 7, 6, 11, 12, 10, 2, 6, 3
-      ],
+      data: occurences,
       backgroundColor: 'rgba(244, 91, 105, 0.9)',
       borderColor: 'rgba(41, 50, 65, 0.9)',
       pointRadius: 4,
@@ -77,8 +73,7 @@ const data = {
     },
     {
       label: 'Victims by Year',
-      data: [11, 48, 21, 20, 11, 56, 14, 61, 19, 57, 28, 6, 7, 14, 50, 89, 7, 9, 15, 12, 26, 28, 85, 41, 78, 11, 40, 151, 48, 46, 89, 154, 704, 150, 185, 9, 59, 38,
-      ],
+      data: totals,
       backgroundColor: 'rgba(244, 91, 105, 0.9)',
       borderColor: 'rgba(41, 50, 65, 0.9)',
       pointRadius: 4,
@@ -96,19 +91,8 @@ export default function Victims({ ...props }) {
     <motion.div className={styles.container}>
       <Back link={endpoint} />
       <motion.div className={styles.grid}>
-
-        <motion.div
-          className={styles.wide}
-          variants={chartVariant}
-          animate='animate'
-          initial='initial'
-          exit='exit'
-        >
-          <Bar
-            options={options}
-            data={data}
-            {...props}
-          />
+        <motion.div className={styles.wide} variants={chartVariant} animate='animate' initial='initial' exit='exit'>
+          <Bar options={options} data={data} {...props} />
         </motion.div>
       </motion.div>
     </motion.div>

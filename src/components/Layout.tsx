@@ -3,7 +3,6 @@ import Navbar from './Navbar';
 import seo from '@/lib/data/seo';
 import styles from '@/styles/components/Layout.module.scss';
 
-
 const Layout = ({ children }) => {
   return (
     <>
@@ -17,9 +16,7 @@ const Layout = ({ children }) => {
       </Head>
       <Navbar />
       <div className={styles.container}>
-        <main className={styles.main}>
-          {children}
-        </main>
+        <main className={styles.main}>{children}</main>
       </div>
     </>
   )
