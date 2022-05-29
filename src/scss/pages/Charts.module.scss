@@ -2,7 +2,7 @@
 @import '../mixins/width.scss';
 
 .container {
-  height: 810px;
+  height: 750px;
   width: 100vw;
   color: $bg-d;
   display: flex;
@@ -43,7 +43,7 @@
     }
     .chartjs {
       margin: 1rem 0.4rem;
-      height: 600px;
+      height: 500px;
       width: 600px;
       padding: 1rem 2rem;
       border: 1px solid $border-color;

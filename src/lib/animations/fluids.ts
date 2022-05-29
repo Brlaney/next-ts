@@ -89,7 +89,7 @@ export const variant5 = {
     y: 0,
     opacity: 1,
     transition: {
-      delay: 1,
+      delay: 1.53,
       duration: 1.3,
       ease: easing2,
     }

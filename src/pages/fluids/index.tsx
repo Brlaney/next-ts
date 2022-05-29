@@ -54,9 +54,7 @@ const Fluids = () => {
 
   useEffect(() => {
     if (reynolds == 0) {
-      // Occurs when page loads
     } else if (reynolds != undefined && reynolds != 0) {
-      // If a value exists in state, then console.log it
       console.log('Reynolds number: ' + reynolds);
       console.log('Flow type: ' + flow(reynolds));
     } else { console.log("An error occurred.") }
@@ -67,32 +65,17 @@ const Fluids = () => {
       <motion.div className={styles.grid}>
 
         {/* Equation display */}
-        <motion.div
-          className={styles.equations}
-          variants={variant1}
-          animate='animate'
-          initial='initial'
-        >
+        <motion.div className={styles.equations} variants={variant1} animate='animate' initial='initial'>
+
           {eqnState == 0 && (
             <motion.div className={styles.eqnts}>
-              <Image
-                id='eqn1-image'
-                width={700}
-                height={134}
-                src={svgs[0]}
-                alt='Equation1'
-              />
+              <Image id='eqn1-image' width={700} height={134} src={svgs[0]} alt='Equation1' />
             </motion.div>)}
           {eqnState == 1 && (
             <motion.div className={styles.eqnts}>
-              <Image
-                id='eqn2-image'
-                width={700}
-                height={134}
-                src={svgs[1]}
-                alt='Equation2'
-              />
+              <Image id='eqn2-image' width={700} height={134} src={svgs[1]} alt='Equation2' />
             </motion.div>)}
+          
           <motion.div className={styles['button-row']}>
             <motion.button
               id='eqn1'
@@ -125,34 +108,13 @@ const Fluids = () => {
         </motion.div>
 
         {/* Form - Calculate Reynolds Number, Re */}
-        <motion.form
-          id='calculate-reynolds-number-form'
-          className={styles.form}
-          onSubmit={(e) => handleSubmit(e)}
-          variants={variant3}
-          animate='animate'
-          initial='initial'
-        >
-
-          <motion.div
-            className={styles['input-container']}
-            variants={stgVariant}
-            layout
-          >
+        <motion.form id='calculate-reynolds-number-form' className={styles.form} onSubmit={(e) => handleSubmit(e)} variants={variant3} animate='animate' initial='initial'>
+          <motion.div className={styles['input-container']} variants={stgVariant} layout>
 
             {/* Velocity input */}
             <AnimatePresence>
-              <motion.div
-                className={styles.inputs}
-                variants={variant4}
-                initial='initial'
-                animate='animate'
-                exit='exit'
-              >
-                <motion.label
-                  className={styles['input-label']}
-                  htmlFor='form-horizontal-text'
-                >
+              <motion.div className={styles.inputs} variants={variant4} initial='initial' animate='animate' exit='exit'>
+                <motion.label className={styles['input-label']} htmlFor='form-horizontal-text'>
                   Velocity, u (fps)
                 </motion.label>
                 <motion.input
@@ -169,18 +131,8 @@ const Fluids = () => {
 
             {/* Characteristic length input */}
             <AnimatePresence>
-              <motion.div
-                className={styles.inputs}
-                variants={variant4}
-                initial='initial'
-                animate='animate'
-                exit='exit'
-                layout
-              >
-                <motion.label
-                  className={styles['input-label']}
-                  htmlFor='form-horizontal-text'
-                >
+              <motion.div className={styles.inputs} variants={variant4} initial='initial' animate='animate' exit='exit' layout>
+                <motion.label className={styles['input-label']} htmlFor='form-horizontal-text'>
                   Characteristic length, L (ft)
                 </motion.label>
                 <motion.input
@@ -198,18 +150,8 @@ const Fluids = () => {
             {/* Density input */}
             <AnimatePresence>
               {eqnState == 0 && (
-                <motion.div
-                  className={styles.inputs}
-                  variants={variant4}
-                  initial='initial'
-                  animate='animate'
-                  exit='exit'
-                  layout
-                >
-                  <motion.label
-                    className={styles['input-label']}
-                    htmlFor='form-horizontal-text'
-                  >
+                <motion.div className={styles.inputs} variants={variant4} initial='initial' animate='animate' exit='exit' layout>
+                  <motion.label className={styles['input-label']} htmlFor='form-horizontal-text'>
                     Density, p (pcf)
                   </motion.label>
                   <motion.input
@@ -227,18 +169,8 @@ const Fluids = () => {
             {/* Dynamic viscosity input */}
             <AnimatePresence>
               {eqnState == 0 && (
-                <motion.div
-                  className={styles.inputs}
-                  variants={variant4}
-                  initial='initial'
-                  animate='animate'
-                  exit='exit'
-                  layout
-                >
-                  <motion.label
-                    className={styles['input-label']}
-                    htmlFor='form-horizontal-text'
-                  >
+                <motion.div className={styles.inputs} variants={variant4} initial='initial' animate='animate' exit='exit' layout>
+                  <motion.label className={styles['input-label']} htmlFor='form-horizontal-text'>
                     Dynamic viscosity, mu (lbs/sf)
                   </motion.label>
                   <motion.input
@@ -256,18 +188,8 @@ const Fluids = () => {
             {/* Kinematic viscosity input */}
             <AnimatePresence>
               {eqnState == 1 && (
-                <motion.div
-                  className={styles['inputs-v']}
-                  variants={variant4}
-                  initial='initial'
-                  animate='animate'
-                  exit='exit'
-                  layout
-                >
-                  <motion.label
-                    className={styles['input-label']}
-                    htmlFor='form-horizontal-text'
-                  >
+                <motion.div className={styles['inputs-v']} variants={variant4} initial='initial' animate='animate' exit='exit' layout>
+                  <motion.label className={styles['input-label']} htmlFor='form-horizontal-text'>
                     Kinematic viscosity, v (lbs/sf)
                   </motion.label>
                   <motion.input
@@ -284,15 +206,7 @@ const Fluids = () => {
 
             {/* Submit button for the form */}
             <motion.div className={styles['form-button']}>
-              <motion.button
-                className='uk-button'
-                type='submit'
-                variants={variant5}
-                whileHover='whileHover'
-                animate='animate'
-                whileTap='whileTap'
-                initial='initial'
-              >
+              <motion.button className='uk-button' type='submit' variants={variant5} whileHover='whileHover' animate='animate' whileTap='whileTap' initial='initial'>
                 Calculate Reynolds Number
               </motion.button>
             </motion.div>

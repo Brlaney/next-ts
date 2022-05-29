@@ -29,8 +29,8 @@ ChartJS.register(
 );
 
 export const options = {
-  responsive: true,
-  width: 800,
+  // responsive: true,
+  width: 600,
   radius: 3,
   hoverRadius: 10,
   hitRadius: 30,
@@ -52,7 +52,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Disciplinary actions timeline',
+      text: 'Mass Shootings in the United States',
     },
   },
 };

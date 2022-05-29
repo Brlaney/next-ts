@@ -28,8 +28,8 @@ ChartJS.register(
 );
 
 export const options = {
-  responsive: true,
-  width: 800,
+  // responsive: true,
+  width: 600,
   radius: 3,
   hoverRadius: 10,
   hitRadius: 30,
@@ -74,7 +74,7 @@ const data = {
     {
       label: 'Victims by Year',
       data: totals,
-      backgroundColor: 'rgba(244, 91, 105, 0.9)',
+      backgroundColor: 'rgba(40, 146, 215, 0.9)',
       borderColor: 'rgba(41, 50, 65, 0.9)',
       pointRadius: 4,
       borderWidth: 1.2,
