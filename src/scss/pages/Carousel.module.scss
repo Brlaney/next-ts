@@ -2,19 +2,21 @@
 @import '../mixins/width.scss';
 
 .container {
-  height: 840px;
+  height: 79vh;
   width: 100vw;
   color: $bg-d;
   display: flex;
-  flex-grow: 0;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  .carousel-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
   .carousel {
-    max-width: 100%;
-    min-width: 0;
-    overflow: hidden;
-    overflow-x: hidden;
     box-shadow: $base-box-shadow-lg;
     background: $bg-d-900;
     margin: 1.5rem 0;

@@ -4,7 +4,7 @@ import { fadeInUp } from '@/lib/animations/pages';
 import images from '@/components/Images';
 import Image from 'next/image';
 import styles from '@/styles/pages/Carousel.module.scss';
-// import useWindowSize from '@/lib/utils/viewport';
+import useWindowSize from '@/lib/utils/viewport';
 
 export default function Carousel() {
   const imgW = 700;
@@ -12,39 +12,14 @@ export default function Carousel() {
   const fixedOffset = 272;
   const fixedImg = 11900;
 
-  function useWindowSize() {
-    const [windowSize, setWindowSize] = useState({width: 0, height: 0});
-  
-    useEffect(() => {
-      if (typeof window !== 'undefined') {
-  
-        function handleResize() {
-          setWindowSize({
-            width: Number(window.innerWidth),
-            height: Number(window.innerHeight),
-          });
-        }
-  
-        window.addEventListener('resize', handleResize);
-        handleResize();
-  
-        return () => window.removeEventListener('resize', handleResize);
-      }
-    }, []);
-    
-    return windowSize;
-  };
-  
   // Define reference to carousel
   const carousel = useRef<HTMLDivElement>(null);
   
   // const [width, setWidth] = useState(10252);
-  const [width, setWidth] = useState(10252);
   const [leftScroll, setLeftScroll] = useState<number>();
   
-  // const [offsetWidth, setOffsetWidth] = useState(1920); // Chrome/Firefox
-  // const [offsetWidth, setOffsetWidth] = useState(1872); // Edge
-  // const [offsetWidth, setOffsetWidth] = useState(size.width);
+  // width: 1920 Chrome/Firefox
+  // width: 1872 Edge
   
   // Display screen width/height:
   const size = useWindowSize();
@@ -61,7 +36,7 @@ export default function Carousel() {
 
   return (
     <motion.div className={styles.container}>
-      <motion.div>
+      <motion.div className={styles['carousel-container']}>
         <motion.div
           ref={carousel}
           className={styles.carousel}
@@ -76,21 +51,8 @@ export default function Carousel() {
           {/* Iterate over your array of images */}
           {images.map((image, i: number) => {
             return (
-              <motion.div
-                className={styles.item}
-                variants={fadeInUp}
-                initial='initial'
-                animate='animate'
-                exit='exit'
-                key={i}
-                layout
-              >
-                <Image
-                  width={imgW}
-                  height={imgH}
-                  src={image}
-                  alt='carousel image'
-                />
+              <motion.div className={styles.item} variants={fadeInUp} initial='initial' animate='animate' exit='exit' key={i} layout>
+                <Image width={imgW} height={imgH} src={image} alt='carousel image' />
               </motion.div>
             )
           })}
