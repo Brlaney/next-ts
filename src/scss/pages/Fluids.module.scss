@@ -14,6 +14,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .answerDisplay {
+      // width: 700px;
+      // height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      text-align: left;
+      padding: 0.4rem;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-sm;
+      box-shadow: $base-box-shadow-xs;
+      z-index: 1; 
+      .answer {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+    }
+
     .equations {
       width: 700px;
       height: 180px;
@@ -21,7 +45,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       text-align: left;
       padding: 0.4rem;
       border: 1px solid $border-color;
@@ -64,6 +88,7 @@
         }
       }
     }
+
     .form {
       width: 700px;
       height: 270px;
