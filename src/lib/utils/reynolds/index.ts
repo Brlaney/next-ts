@@ -18,22 +18,6 @@
   turbulent - when Re > 4000
 */
 
-// Function (1.) Reynolds number using density (p) and dynamic viscosity (mu)
-// export function Re1(p, u, L, mu) {
-//   const initial: number = p * u * L / mu;
-//   const Re: number = Math.round(initial); // Round to n decimal places (where n==0)
-
-//   return Re;
-// };
-
-// // Function (2.) Reynolds number using only kinematic viscosity (v)
-// export function Re2(u, L, v) {
-//   const initial: number = u * L / v;
-//   const Re: number = Math.round(initial); // Rounded to 5 decimal places
-
-//   return Re;
-// };
-
 /**
  * Calculates Reynolds number based on density, velocity, characteristic length, and dynamic viscosity.
  * @param density Density (kg/m3 or lb/ft3)

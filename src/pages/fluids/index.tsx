@@ -12,6 +12,8 @@ import {
 const Fluids = () => {
   const [eqnState, setEqnState] = useState(0);
   const [reynolds, setReynolds] = useState(0);
+
+  // Following is used for no default values
   const [p, setP] = useState(0);   // Density (p)
   const [u, setU] = useState(0);   // Velocity (u)
   const [L, setL] = useState(0);   // Char. length (L)
@@ -54,10 +56,27 @@ const Fluids = () => {
         {/* Conditionally display the answer */}
         {reynolds !== 0 && (
           <motion.div className={styles.answerDisplay}>
-            <motion.div className={styles.answer} >
-              {reynolds}
+            <motion.div
+              className={styles.inputs}
+              variants={variant4}
+              initial='initial'
+              animate='animate'
+              exit='exit'
+            >
+              <motion.div className={styles.answer} >
+                <motion.label
+                  className={styles['input-label']}
+                  htmlFor='form-horizontal-text'
+                >
+                  Reynolds Number:
+                </motion.label>
+                <motion.div className={styles.answerInner} >
+                  {reynolds}
+                </motion.div>
+              </motion.div>
             </motion.div>
-          </motion.div>)}
+          </motion.div>
+        )}
 
         <motion.div
           className={styles.equations}
